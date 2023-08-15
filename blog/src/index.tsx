@@ -2,6 +2,10 @@ import { promises } from "node:fs";
 import { join, parse, resolve } from "node:path";
 import type { ParsedPath } from "node:path";
 
+import { evaluate } from "@mdx-js/mdx";
+import type { RunnerOptions } from "@mdx-js/mdx/lib/util/resolve-evaluate-options";
+import * as provider from "@mdx-js/react";
+import runtime from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import { rimraf } from "rimraf";
 
@@ -51,25 +55,54 @@ async function writeToFile(path: string, output: string): Promise<void> {
 async function pageGeneration(): Promise<void> {
   const folderPath = getFolderPath();
   const pages = await fetchAllPages(folderPath);
-  const writePromises: Promise<unknown>[] = [];
 
   await rimraf(resolve(folderPath, join(MAIN_FOLDER)));
 
   for await (const page of pages) {
     const inputFilePath = resolve(folderPath, page);
-    const { default: Component, title } = await import(inputFilePath);
-    const renderedComponent = `<!doctype html>${
-      renderToString(
-        <HtmlShell title={title}>
-          <Component />
-        </HtmlShell>,
-      )
-    }`;
-    const parsedPage = getOutputPath(parse(page));
-    writePromises.push(writeToFile(
+    const parsedInputFile = parse(inputFilePath);
+    let renderedComponent: string;
+    let parsedPage: string;
+
+    if (parsedInputFile.ext !== ".mdx" && parsedInputFile.ext !== ".tsx") {
+      throw new Error("Unknown Extension");
+    }
+
+    if (parsedInputFile.ext === ".mdx") {
+      const md = await promises.readFile(inputFilePath, { encoding: "utf-8" });
+      const { default: Component, title } = await evaluate(md, {
+        ...provider,
+        ...runtime as RunnerOptions,
+        development: false,
+      });
+
+      renderedComponent = `<!doctype html>${
+        renderToString(
+          <HtmlShell title={title as string | undefined}>
+            <Component />
+          </HtmlShell>,
+        )
+      }`;
+
+      parsedPage = getOutputPath(parse(page));
+    } else {
+      const { default: Component, title } = await import(inputFilePath);
+
+      renderedComponent = `<!doctype html>${
+        renderToString(
+          <HtmlShell title={title}>
+            <Component />
+          </HtmlShell>,
+        )
+      }`;
+
+      parsedPage = getOutputPath(parse(page));
+    }
+
+    writeToFile(
       resolve(folderPath, MAIN_FOLDER, parsedPage),
       renderedComponent,
-    ));
+    );
   }
 }
 
