@@ -11,17 +11,20 @@ import {
   getOutputPath,
   writeToFile,
 } from "./utils";
+import type { TTags } from "./types";
+import buildTagComponent from "./buildTagComponent";
 
 const MAIN_FOLDER = "../../docs";
 
 async function pageGeneration(): Promise<void> {
   const folderPath = getFolderPath();
   const pages = await fetchAllPages(folderPath);
-  const tags: string[] = [];
+  const tags: TTags = {};
 
   await rimraf(resolve(folderPath, join(MAIN_FOLDER)));
 
   for await (const page of pages) {
+    const parsedPage = getOutputPath(parse(page));
     const inputFilePath = resolve(folderPath, page);
     const parsedInputFile = parse(inputFilePath);
     let Component: () => ReactNode;
@@ -32,16 +35,18 @@ async function pageGeneration(): Promise<void> {
     }
 
     if (parsedInputFile.ext === ".mdx") {
-      const { Component: _Component, title: _title, tags: _tags = [] } =
+      const { Component: _Component, title: _title, tags: _tags } =
         await handleMdxData(inputFilePath);
       Component = _Component as unknown as () => ReactNode;
       title = _title;
-      for (const tag of _tags) {
-        if (tags.includes(tag)) {
-          continue;
-        }
 
-        tags.push(tag);
+      for (const tag of _tags) {
+        const tagData = { title, path: parsedPage };
+        if (Object.keys(tags).includes(tag)) {
+          tags[tag]?.push(tagData);
+        } else {
+          tags[tag] = [tagData];
+        }
       }
     } else {
       const { default: _Component, title: _title } = await import(
@@ -52,7 +57,6 @@ async function pageGeneration(): Promise<void> {
     }
 
     const renderedComponent = buildReactComponent(Component, title);
-    const parsedPage = getOutputPath(parse(page));
 
     writeToFile(
       resolve(folderPath, MAIN_FOLDER, parsedPage),
@@ -60,8 +64,19 @@ async function pageGeneration(): Promise<void> {
     );
   }
 
-  // TODO: write tags
-  console.log(tags.sort());
+  for (const [tag, tagArray] of Object.entries(tags)) {
+    const renderedComponent = buildTagComponent(tag, tagArray);
+
+    writeToFile(
+      resolve(
+        folderPath,
+        MAIN_FOLDER,
+        "tags",
+        getOutputPath(parse(tag)),
+      ),
+      renderedComponent,
+    );
+  }
 }
 
 pageGeneration();

@@ -15,7 +15,7 @@ export default async function handleMdxData(inputFilePath: string) {
 
   return {
     Component,
-    title: title as string | undefined,
-    tags: tags as string[] | undefined,
+    title: title as string,
+    tags: tags as string[],
   };
 }
