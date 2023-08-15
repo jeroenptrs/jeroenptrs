@@ -28,6 +28,10 @@ async function pageGeneration(): Promise<void> {
     const parsedInputFile = parse(inputFilePath);
     let renderedComponent: string;
 
+    if (parsedInputFile.base === ".gitkeep") {
+      continue;
+    }
+
     if (parsedInputFile.ext !== ".mdx" && parsedInputFile.ext !== ".tsx") {
       throw new Error("Unknown Extension");
     }
@@ -36,6 +40,10 @@ async function pageGeneration(): Promise<void> {
       const { Component, title, tags: _tags, metadata } = await handleMdxData(
         inputFilePath,
       );
+
+      if (!metadata.published) {
+        continue;
+      }
 
       renderedComponent = buildArticleComponent(
         Component,
