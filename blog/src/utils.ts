@@ -49,6 +49,10 @@ export function splitCommaArray(
   _arrayString: string,
   forceCase?: "lower" | "upper",
 ): string[] {
+  if (_arrayString === "") {
+    return [];
+  }
+
   let arrayString = _arrayString;
 
   if (forceCase === "lower") {

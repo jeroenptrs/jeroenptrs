@@ -5,7 +5,7 @@ import * as prompts from "./prompts";
 import { splitCommaArray } from "../utils";
 
 export default async function askTags({ tags }: TFlags): Promise<string[]> {
-  if (tags) {
+  if (typeof tags === "string") {
     return splitCommaArray(tags, "lower");
   }
 
