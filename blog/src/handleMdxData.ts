@@ -13,6 +13,8 @@ export default async function handleMdxData(inputFilePath: string) {
     development: false,
   });
 
+  // TODO: add metadata
+
   return {
     Component,
     title: title as string,

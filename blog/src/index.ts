@@ -1,6 +1,5 @@
 import { join, parse, resolve } from "node:path";
 
-import type { ReactNode } from "react";
 import { rimraf } from "rimraf";
 
 import handleMdxData from "./handleMdxData";
@@ -13,6 +12,7 @@ import {
 } from "./utils";
 import type { TTags } from "./types";
 import buildTagComponent from "./buildTagComponent";
+import buildArticleComponent from "./buildArticleComponent";
 
 const MAIN_FOLDER = "../../docs";
 
@@ -27,18 +27,18 @@ async function pageGeneration(): Promise<void> {
     const parsedPage = getOutputPath(parse(page));
     const inputFilePath = resolve(folderPath, page);
     const parsedInputFile = parse(inputFilePath);
-    let Component: () => ReactNode;
-    let title: string | undefined;
+    let renderedComponent: string;
 
     if (parsedInputFile.ext !== ".mdx" && parsedInputFile.ext !== ".tsx") {
       throw new Error("Unknown Extension");
     }
 
     if (parsedInputFile.ext === ".mdx") {
-      const { Component: _Component, title: _title, tags: _tags } =
-        await handleMdxData(inputFilePath);
-      Component = _Component as unknown as () => ReactNode;
-      title = _title;
+      const { Component, title, tags: _tags } = await handleMdxData(
+        inputFilePath,
+      );
+
+      renderedComponent = buildArticleComponent(Component, title);
 
       for (const tag of _tags) {
         const tagData = { title, path: parsedPage };
@@ -49,14 +49,11 @@ async function pageGeneration(): Promise<void> {
         }
       }
     } else {
-      const { default: _Component, title: _title } = await import(
+      const { default: Component } = await import(
         inputFilePath
       );
-      Component = _Component;
-      title = _title;
+      renderedComponent = buildReactComponent(Component);
     }
-
-    const renderedComponent = buildReactComponent(Component, title);
 
     writeToFile(
       resolve(folderPath, MAIN_FOLDER, parsedPage),
