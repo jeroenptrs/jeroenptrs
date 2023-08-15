@@ -1,0 +1,16 @@
+{
+  "name": "@jeroenpeeters/site",
+  "version": "1.0.0",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "blog": "cd blog && yarn",
+    "design": "cd design-system && yarn"
+  },
+  "author": {
+    "name": "Jeroen Peeters",
+    "email": "contact@jeroenpeeters.be"
+  },
+  "license": "ISC"
+}

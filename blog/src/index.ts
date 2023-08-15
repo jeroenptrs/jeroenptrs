@@ -13,8 +13,7 @@ import {
 import type { TTags } from "./types";
 import buildTagComponent from "./buildTagComponent";
 import buildArticleComponent from "./buildArticleComponent";
-
-const MAIN_FOLDER = "../../docs";
+import { MAIN_FOLDER } from "./constants";
 
 async function pageGeneration(): Promise<void> {
   const folderPath = getFolderPath();
@@ -34,11 +33,16 @@ async function pageGeneration(): Promise<void> {
     }
 
     if (parsedInputFile.ext === ".mdx") {
-      const { Component, title, tags: _tags } = await handleMdxData(
+      const { Component, title, tags: _tags, metadata } = await handleMdxData(
         inputFilePath,
       );
 
-      renderedComponent = buildArticleComponent(Component, title);
+      renderedComponent = buildArticleComponent(
+        Component,
+        title,
+        _tags,
+        metadata,
+      );
 
       for (const tag of _tags) {
         const tagData = { title, path: parsedPage };

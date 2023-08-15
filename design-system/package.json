@@ -1,0 +1,14 @@
+{
+  "name": "@jeroenpeeters/blog-design-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Jeroen Peeters",
+    "email": "contact@jeroenpeeters.be"
+  },
+  "license": "ISC"
+}
