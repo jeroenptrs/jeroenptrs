@@ -40,3 +40,22 @@ export async function writeToFile(path: string, output: string): Promise<void> {
   await promises.mkdir(dir, { recursive: true });
   promises.writeFile(path, output, { encoding: "utf-8" });
 }
+
+export function getISOTimestampFromDate(date: Date): string {
+  return date.toISOString().substring(0, 10).replaceAll("-", "");
+}
+
+export function splitCommaArray(
+  _arrayString: string,
+  forceCase?: "lower" | "upper",
+): string[] {
+  let arrayString = _arrayString;
+
+  if (forceCase === "lower") {
+    arrayString = _arrayString.toLowerCase();
+  } else if (forceCase === "upper") {
+    arrayString = _arrayString.toUpperCase();
+  }
+
+  return arrayString.split(",").map((e) => e.trim());
+}
