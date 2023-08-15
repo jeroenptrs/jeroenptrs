@@ -1,0 +1,20 @@
+{
+  "name": "@jeroenpeeters/site",
+  "version": "1.0.0",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "blog": "cd blog && yarn",
+    "design": "cd design-system && yarn",
+    "prepare": "husky install"
+  },
+  "author": {
+    "name": "Jeroen Peeters",
+    "email": "contact@jeroenpeeters.be"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.0"
+  }
+}
