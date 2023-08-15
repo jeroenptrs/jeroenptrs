@@ -1,3 +1,6 @@
 {
-  "extends": "@jeroenpeeters/tsconfig"
+  "extends": "@jeroenpeeters/tsconfig",
+  "compilerOptions": {
+    "downlevelIteration": true
+  }
 }

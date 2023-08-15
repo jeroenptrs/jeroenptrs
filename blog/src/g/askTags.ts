@@ -9,7 +9,7 @@ export default async function askTags({ tags }: TFlags): Promise<string[]> {
     return splitCommaArray(tags, "lower");
   }
 
-  const answers = await inquirer.prompt([prompts.newTags]);
+  const answers = await inquirer.prompt([prompts.tags]);
 
-  return splitCommaArray(answers["tags"], "lower");
+  return [...new Set(splitCommaArray(answers["tags"], "lower"))];
 }
