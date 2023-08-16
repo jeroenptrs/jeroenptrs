@@ -1,5 +1,8 @@
 import { promises } from "node:fs";
 import { resolve } from "node:path";
+
+import ora from "ora";
+
 import { getFolderPath } from "../utils";
 import {
   ARTICLES_FOLDER,
@@ -15,6 +18,7 @@ export default async function gNewMdx(
   tags: string,
   metadata: string,
 ): Promise<void> {
+  const spinner = ora(`Generating ${file}`);
   const folderPath = getFolderPath();
   const outputLocation = resolve(folderPath, ARTICLES_FOLDER, file);
   const templateLocation = resolve(folderPath, TEMPLATE_LOCATION);
@@ -31,4 +35,7 @@ export default async function gNewMdx(
   await promises.writeFile(outputLocation, outputContent, {
     encoding: "utf-8",
   });
+
+  spinner.text = `Generated ${file}`;
+  spinner.succeed();
 }

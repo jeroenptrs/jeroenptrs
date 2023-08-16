@@ -1,11 +1,16 @@
 import meow from "meow";
+
 import askTitle from "./askTitle";
 import askFile from "./askFile";
 import setFile from "./setFile";
 import askTags from "./askTags";
 import askAuthors from "./askAuthors";
-import { TMetadata } from "../types";
+import type { TMetadata } from "../types";
 import gNewMdx from "./gNewMdx";
+import selectFile from "./selectFile";
+import gPublishMdx from "./gPublishMdx";
+import askUpdateChoices from "./askUpdateChoices";
+import gUpdateMdx from "./gUpdateMdx";
 
 const cli = meow(
   `
@@ -54,17 +59,20 @@ const { update, publish, ...restFlags } = cli.flags;
 
 async function g() {
   if (update) {
-    // TODO: update
     /**
      * List files or if --file is passed, use that one (if bogus file, fall back on list)
      * Ask what to update (title, file, tags, authors -> use checkboxes)
      */
+    const file = await selectFile(restFlags);
+    const updateChoices = await askUpdateChoices(restFlags);
+    await gUpdateMdx(file, restFlags, updateChoices);
   } else if (publish) {
-    // TODO: publish
     /**
      * List files or if --file is passed, use that one (if bogus file, fall back on list)
      * Add published to metadata
      */
+    const file = await selectFile(restFlags);
+    await gPublishMdx(file);
   } else {
     /**
      * Ask for title (unless --title is passed, skip to next step)
