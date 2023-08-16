@@ -1,8 +1,26 @@
+import { readdirSync } from "node:fs";
+import { parse, resolve } from "node:path";
+
+import { getFolderPath } from "../src/utils";
+import { ARTICLES_FOLDER } from "../src/constants";
+
+const [, ...pageList] = readdirSync(
+  resolve(getFolderPath(), ARTICLES_FOLDER),
+) as [
+  string,
+  ...Array<string>,
+];
+
 export default function Index() {
   return (
     <>
-      <h1>This is a test!</h1>
-      <p>This is a test paragraph!</p>
+      {pageList.map(parse).map(({ name }) => (
+        <article key={name}>
+          <a href={`/entries/${name}.html`}>
+            <h1>{name}</h1>
+          </a>
+        </article>
+      ))}
     </>
   );
 }

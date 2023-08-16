@@ -1,1 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=DM%20Sans");
+@import url("https://fonts.googleapis.com/css?family=DM%20Serif%20Display");
 @import "../node_modules/sanitize.css/sanitize";
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+
+  --black: #111111;
+  --dark-grey: #333333;
+  --navy: #001f3f;
+  --white: #ffffff;
+  --teal: #39cccc;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+h1 {
+  color: var(--teal);
+  font-family: "DM Serif Display", serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+
+  ul {
+    display: flex;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--teal);
+
+  &:is([aria-current], :hover, :active, :focus) {
+    text-decoration: underline;
+  }
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+article {
+  background-color: var(--dark-grey);
+  padding: 1rem;
+  border-radius: .5rem;
+
+  + article {
+    margin-top: 1.5rem;
+  }
+}
+

@@ -24,6 +24,8 @@ export default async function pageGeneration(): Promise<void> {
   console.log(chalk.red(`🚮 Clearing ${MAIN_FOLDER}`));
   await rimraf(resolve(folderPath, join(MAIN_FOLDER)));
 
+  // TODO: split up in getting info and then processing
+  // This allows us to make a list of published articles that we'll feed to every component
   for await (const page of pages) {
     const parsedPage = getOutputPath(parse(page));
     const inputFilePath = resolve(folderPath, page);
