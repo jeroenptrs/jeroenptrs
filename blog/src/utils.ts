@@ -1,6 +1,7 @@
 import { promises } from "node:fs";
 import { join, parse, resolve } from "node:path";
 import type { ParsedPath } from "node:path";
+import { spawn, SpawnOptions } from "node:child_process";
 
 export function getFolderPath(): string {
   if (
@@ -62,4 +63,20 @@ export function splitCommaArray(
   }
 
   return arrayString.split(",").map((e) => e.trim());
+}
+
+export function exec(
+  command: string,
+  args: string[],
+  spawnOptions: SpawnOptions,
+) {
+  return new Promise(function (resolve, reject) {
+    const process = spawn(command, args, spawnOptions);
+    process.on("close", (code) => {
+      resolve(code);
+    });
+    process.on("error", (err) => {
+      reject(err);
+    });
+  });
 }

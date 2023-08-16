@@ -9,6 +9,7 @@ export default function HtmlShell(
     <html>
       <head>
         <title>{title}</title>
+        <link rel="stylesheet" href="/assets/index.css" />
       </head>
       <body>
         {children}

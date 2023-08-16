@@ -7,6 +7,8 @@
   "scripts": {
     "blog": "cd blog && yarn",
     "design": "cd design-system && yarn",
+    "dev": "concurrently \"serve docs\" \"yarn blog watch\" \"yarn design watch\"",
+    "build": "yarn blog build && yarn design build:prod",
     "prepare": "husky install"
   },
   "author": {
@@ -15,6 +17,8 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "husky": "^8.0.0"
+    "concurrently": "^8.2.0",
+    "husky": "^8.0.0",
+    "serve": "^14.2.0"
   }
 }

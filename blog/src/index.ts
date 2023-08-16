@@ -1,6 +1,7 @@
 import { join, parse, resolve } from "node:path";
 
 import { rimraf } from "rimraf";
+import chalk from "chalk";
 
 import handleMdxData from "./handleMdxData";
 import buildReactComponent from "./buildReactComponent";
@@ -15,11 +16,12 @@ import buildTagComponent from "./buildTagComponent";
 import buildArticleComponent from "./buildArticleComponent";
 import { MAIN_FOLDER } from "./constants";
 
-async function pageGeneration(): Promise<void> {
+export default async function pageGeneration(): Promise<void> {
   const folderPath = getFolderPath();
   const pages = await fetchAllPages(folderPath);
   const tags: TTags = {};
 
+  console.log(chalk.red(`🚮 Clearing ${MAIN_FOLDER}`));
   await rimraf(resolve(folderPath, join(MAIN_FOLDER)));
 
   for await (const page of pages) {
@@ -36,12 +38,14 @@ async function pageGeneration(): Promise<void> {
       throw new Error("Unknown Extension");
     }
 
+    console.log(`Processing ${chalk.cyan(page)}`);
     if (parsedInputFile.ext === ".mdx") {
       const { Component, title, tags: _tags, metadata } = await handleMdxData(
         inputFilePath,
       );
 
-      if (!metadata.published) {
+      if (process.env["IGNORE_NOT_PUBLISHED"] && !metadata.published) {
+        console.log(chalk.yellow(`Skipping ${page}`));
         continue;
       }
 
@@ -67,16 +71,19 @@ async function pageGeneration(): Promise<void> {
       renderedComponent = buildReactComponent(Component);
     }
 
-    writeToFile(
+    await writeToFile(
       resolve(folderPath, MAIN_FOLDER, parsedPage),
       renderedComponent,
     );
+
+    console.log(chalk.green(`Generated ${page}`));
   }
 
-  for (const [tag, tagArray] of Object.entries(tags)) {
+  console.log("🔖 Processing tags");
+  for await (const [tag, tagArray] of Object.entries(tags)) {
     const renderedComponent = buildTagComponent(tag, tagArray);
 
-    writeToFile(
+    await writeToFile(
       resolve(
         folderPath,
         MAIN_FOLDER,
@@ -85,7 +92,7 @@ async function pageGeneration(): Promise<void> {
       ),
       renderedComponent,
     );
+
+    console.log(chalk.green(`Generated tag ${tag}`));
   }
 }
-
-pageGeneration();
