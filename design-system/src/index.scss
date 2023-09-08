@@ -66,6 +66,10 @@ article hgroup {
 
 $size: calc(.9rem - (var(--pico-border-width) * 2));
 
+#theme-switcher:before {
+  background-color: transparent;
+}
+
 .theme-switcher_gutter {
   position: absolute;
   display: inline-block;
