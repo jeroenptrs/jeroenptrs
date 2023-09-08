@@ -66,8 +66,13 @@ article hgroup {
 
 $size: calc(.9rem - (var(--pico-border-width) * 2));
 
-#theme-switcher:before {
-  background-color: transparent;
+#theme-switcher {
+  width: 1.25em;
+  margin-inline-end: 0;
+
+  &:before {
+    background-color: transparent;
+  }
 }
 
 .theme-switcher_gutter {
@@ -85,13 +90,13 @@ $size: calc(.9rem - (var(--pico-border-width) * 2));
 [data-theme=light] {
   .theme-switcher_gutter {
     transform: translateX(.237rem);
-    // transform: translateX(1.2rem);
+    // transform: translateX(1.137rem);
   }
 }
 
 [data-theme=dark] {
   .theme-switcher_gutter {
-    transform: translateX(1.137rem);
-    // transform: translateX(.15rem);
+    transform: translateX(.237rem);
+    // transform: translateX(1.137rem);
   }
 }
