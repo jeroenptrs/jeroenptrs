@@ -53,7 +53,18 @@ h1, h2, h3, h4, h5, h6 {
   --pico-primary-inverse: #fff;
 }
 
-$size: calc(1rem - (var(--pico-border-width) * 2));
+article hgroup {
+  margin-bottom: 0;
+
+  h4 {
+    text-decoration: none;
+    --pico-text-decoration: none;
+  }
+}
+
+/* THEME SWITCHER */
+
+$size: calc(.9rem - (var(--pico-border-width) * 2));
 
 .theme-switcher_gutter {
   position: absolute;
@@ -61,12 +72,12 @@ $size: calc(1rem - (var(--pico-border-width) * 2));
   width: $size;
   height: $size;
   line-height: $size;
-  top: 1.325rem;
+  top: 1.375rem;
   pointer-events: none;
 }
 
 [data-theme=light] .theme-switcher_gutter {
-  transform: translateX(1.15rem);
+  transform: translateX(1.2rem);
 }
 
 [data-theme=dark] .theme-switcher_gutter {

@@ -1,24 +1,16 @@
-import { readdirSync } from "node:fs";
-import { parse, resolve } from "node:path";
+import { TData } from "../src/types";
 
-import { getFolderPath } from "../src/utils";
-import { ARTICLES_FOLDER } from "../src/constants";
-
-const [, ...pageList] = readdirSync(
-  resolve(getFolderPath(), ARTICLES_FOLDER),
-) as [
-  string,
-  ...Array<string>,
-];
-
-export default function Index() {
+export default function Index({ pages }: { pages: TData["pages"] }) {
   return (
     <>
-      {pageList.map(parse).map(({ name }) => (
-        <article key={name}>
-          <a href={`/entries/${name}.html`}>
-            <h1>{name}</h1>
-          </a>
+      {pages.map(({ title, file, metadata }) => (
+        <article key={file}>
+          <hgroup>
+            <a href={`/${file}`}>
+              <h1>{title}</h1>
+            </a>
+            <h4>Written on {metadata.published ?? metadata.created}</h4>
+          </hgroup>
         </article>
       ))}
     </>

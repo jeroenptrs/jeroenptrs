@@ -11,3 +11,11 @@ export type TFlags = {
   tags: string | undefined;
   authors: string | undefined;
 };
+export type TData = {
+  pages: {
+    file: string;
+    title: string;
+    metadata: TMetadata;
+  }[];
+  tags: TTags;
+};
