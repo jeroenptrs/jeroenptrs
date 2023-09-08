@@ -1,24 +1,25 @@
 <!doctype html>
-<html>
+<html data-theme="dark">
   <head>
     <title>jeroenpeeters.be</title>
-    <link rel="stylesheet" href="/assets/index.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
   </head>
   <body>
-    <nav>
+    <nav class="container">
       <ul>
         <li>Jeroen Peeters</li>
       </ul>
       <ul>
-        <li><a aria-current="page">Home</a></li>
+        <li class="nav-ts"><theme-switcher></theme-switcher></li>
       </ul>
     </nav>
-    <main>
+    <main class="container">
       <article>
         <a href="/entries/20230815-test-mdx.html"><h1>20230815-test-mdx</h1></a>
       </article>
     </main>
+    <script src="/assets/js/theme-switcher.js"></script>
   </body>
 </html>

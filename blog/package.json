@@ -17,7 +17,7 @@
     "name": "Jeroen Peeters",
     "email": "contact@jeroenpeeters.be"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@jeroenpeeters/tsconfig": "^1.1.0",
     "@mdx-js/mdx": "^2.3.0",
