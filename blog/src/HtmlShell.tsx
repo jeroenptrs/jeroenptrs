@@ -37,8 +37,11 @@ export default function HtmlShell(
           {children}
         </main>
         <footer className="container">
-          <div className="flag pansexual" />
-          <Github />
+          <div className="icons">
+            <div className="flag pansexual" />
+            <Github />
+          </div>
+          <a>rss</a>
         </footer>
         <script src="/assets/js/theme-switcher.js"></script>
       </body>

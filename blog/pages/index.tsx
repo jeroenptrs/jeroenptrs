@@ -1,3 +1,4 @@
+import formatDate from "../src/formatDate";
 import { TData } from "../src/types";
 
 export default function Index({ pages }: { pages: TData["pages"] }) {
@@ -9,7 +10,11 @@ export default function Index({ pages }: { pages: TData["pages"] }) {
             <a href={`/${file}`}>
               <h1>{title}</h1>
             </a>
-            <h4>Written on {metadata.published ?? metadata.created}</h4>
+            <h4>
+              Written on {formatDate(metadata.published ?? metadata.created)} by
+              {" "}
+              {metadata.authors.join(", ")}
+            </h4>
           </hgroup>
         </article>
       ))}
