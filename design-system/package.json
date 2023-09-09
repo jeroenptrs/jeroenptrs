@@ -4,11 +4,11 @@
   "description": "",
   "scripts": {
     "build:prodcss": "parcel build src/index.scss --no-cache --no-source-maps --dist-dir ../docs/assets/css",
-    "build:prod": "yarn build:prodcss && yarn build:js && yarn build:svg",
+    "build:prod": "pnpm run build:prodcss && pnpm run build:js && pnpm run build:svg",
     "build:css": "parcel build src/index.scss --no-cache --dist-dir ../docs/assets/css",
     "build:js": "mkdir ../docs/assets/js && cp src/theme-switcher.js ../docs/assets/js/theme-switcher.js",
     "build:svg": "mkdir ../docs/assets/svg && cp src/dark.svg ../docs/assets/svg/dark.svg && cp src/light.svg ../docs/assets/svg/light.svg",
-    "build": "yarn build:css && yarn build:js && yarn build:svg",
+    "build": "pnpm run build:css && pnpm run build:js && pnpm run build:svg",
     "watch": "parcel watch src/index.scss --no-cache --dist-dir ../docs/assets/css"
   },
   "author": {
