@@ -62,6 +62,21 @@ article hgroup {
   }
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+  }
+}
+
 /* THEME SWITCHER */
 
 $size: calc(.9rem - (var(--pico-border-width) * 2));
@@ -88,6 +103,10 @@ $size: calc(.9rem - (var(--pico-border-width) * 2));
 }
 
 [data-theme=light] {
+  .gh {
+    fill: #24292f;
+  }
+
   .theme-switcher_gutter {
     transform: translateX(.237rem);
     // transform: translateX(1.137rem);
@@ -95,8 +114,40 @@ $size: calc(.9rem - (var(--pico-border-width) * 2));
 }
 
 [data-theme=dark] {
+  .gh {
+    fill: #ffffff;
+  }
+
   .theme-switcher_gutter {
     transform: translateX(.237rem);
     // transform: translateX(1.137rem);
+  }
+}
+
+footer {
+  display: flex;
+  gap: .5rem;
+}
+
+/* PAN FLAG */
+.flag {
+  display: inline-block;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  aspect-ratio: 14 / 9;
+  
+  &.pansexual {
+    background: linear-gradient(#f09 33.33%, gold 0 66.66%, deepskyblue 0);
+  }
+}
+
+/* GITHUB ICON */
+.gh-container {
+  display: inline-block;
+  height: 1.25rem;
+  line-height: 1rem;
+
+  .gh-svg {
+    height: 1.25rem;
   }
 }

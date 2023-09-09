@@ -1,3 +1,5 @@
+import Github from "./Github";
+
 type THtmlShellProps = React.PropsWithChildren<{
   title?: string;
 }>;
@@ -16,15 +18,16 @@ export default function HtmlShell(
       <body>
         <nav className="container">
           <ul>
-            <li>Jeroen Peeters</li>
+            <li>
+              {title !== "jeroenpeeters.be" && (
+                <a className="contrast" href="/">Jeroen Peeters</a>
+              )}
+              {title === "jeroenpeeters.be" && (
+                <a className="contrast" aria-current="page">Jeroen Peeters</a>
+              )}
+            </li>
           </ul>
           <ul>
-            {title !== "jeroenpeeters.be" &&
-              (
-                <li>
-                  <a href="/">Home</a>
-                </li>
-              )}
             <li className="nav-ts">
               <theme-switcher></theme-switcher>
             </li>
@@ -33,6 +36,10 @@ export default function HtmlShell(
         <main className="container">
           {children}
         </main>
+        <footer className="container">
+          <div className="flag pansexual" />
+          <Github />
+        </footer>
         <script src="/assets/js/theme-switcher.js"></script>
       </body>
     </html>
