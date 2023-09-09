@@ -1,6 +1,6 @@
 import type { TTag } from "./types";
 
-const url = (path: string) => `https://jeroenpeeters.be/${path}`;
+const url = (path: string) => `/${path}`;
 
 export default function TagPage({ tag }: { tag: Array<TTag> }) {
   return (

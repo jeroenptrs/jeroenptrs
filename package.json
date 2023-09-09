@@ -5,8 +5,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "blog": "cd blog && yarn",
-    "design": "cd design-system && yarn",
+    "blog": "cd blog && pnpm run",
+    "design": "cd design-system && pnpm run",
+    "dev": "concurrently \"serve docs\" \"pnpm run blog watch\" \"pnpm run design watch\"",
+    "build": "pnpm run blog build && pnpm run design build:prod",
     "prepare": "husky install"
   },
   "author": {
@@ -15,6 +17,8 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "husky": "^8.0.0"
+    "concurrently": "^8.2.0",
+    "husky": "^8.0.0",
+    "serve": "^14.2.0"
   }
 }

@@ -1,8 +1,23 @@
-export default function Index() {
+import formatDate from "../src/formatDate";
+import { TData } from "../src/types";
+
+export default function Index({ pages }: { pages: TData["pages"] }) {
   return (
     <>
-      <h1>This is a test!</h1>
-      <p>This is a test paragraph!</p>
+      {pages.map(({ title, file, metadata }) => (
+        <article key={file}>
+          <hgroup>
+            <a href={`/${file}`}>
+              <h1>{title}</h1>
+            </a>
+            <h4>
+              Written on {formatDate(metadata.published ?? metadata.created)} by
+              {" "}
+              {metadata.authors.join(", ")}
+            </h4>
+          </hgroup>
+        </article>
+      ))}
     </>
   );
 }

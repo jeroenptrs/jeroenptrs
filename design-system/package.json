@@ -2,13 +2,31 @@
   "name": "@jeroenpeeters/blog-design-system",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:prodcss": "parcel build src/index.scss --no-cache --no-source-maps --dist-dir ../docs/assets/css",
+    "build:prod": "pnpm run build:prodcss && pnpm run build:js && pnpm run build:svg",
+    "build:css": "parcel build src/index.scss --no-cache --dist-dir ../docs/assets/css",
+    "build:js": "mkdir ../docs/assets/js && cp src/theme-switcher.js ../docs/assets/js/theme-switcher.js",
+    "build:svg": "mkdir ../docs/assets/svg && cp src/dark.svg ../docs/assets/svg/dark.svg && cp src/light.svg ../docs/assets/svg/light.svg",
+    "build": "pnpm run build:css && pnpm run build:js && pnpm run build:svg",
+    "watch": "parcel watch src/index.scss --no-cache --dist-dir ../docs/assets/css"
   },
   "author": {
     "name": "Jeroen Peeters",
     "email": "contact@jeroenpeeters.be"
   },
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.9.3",
+    "parcel": "^2.9.3"
+  },
+  "browserslist": [
+    ">= 0.5%",
+    "last 2 major versions",
+    "not dead",
+    "not ie > 0"
+  ],
+  "dependencies": {
+    "@picocss/pico": "next"
+  }
 }
