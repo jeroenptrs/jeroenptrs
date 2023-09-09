@@ -8,7 +8,8 @@
     "blog": "cd blog && pnpm run",
     "design": "cd design-system && pnpm run",
     "dev": "concurrently \"serve docs\" \"pnpm run blog watch\" \"pnpm run design watch\"",
-    "build": "pnpm run blog build && pnpm run design build:prod",
+    "build": "pnpm run blog build && pnpm run design build:prod && pnpm run cname",
+    "cname": "cp CNAME docs/CNAME",
     "prepare": "husky install"
   },
   "author": {
