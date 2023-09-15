@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "build:prodcss": "parcel build src/index.scss --no-cache --no-source-maps --dist-dir ../docs/assets/css",
-    "build:prod": "pnpm run build:prodcss",
+    "build:prod": "pnpm build:prodcss",
     "build:css": "parcel build src/index.scss --no-cache --dist-dir ../docs/assets/css",
-    "build": "pnpm run build:css",
+    "build": "pnpm build:css",
     "watch": "parcel watch src/index.scss --no-cache --dist-dir ../docs/assets/css"
   },
   "author": {

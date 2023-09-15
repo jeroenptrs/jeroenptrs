@@ -16,7 +16,7 @@ import gUpdateMdx from "./gUpdateMdx";
 const cli = meow(
   `
   Usage
-  > pnpm run blog g
+  > pnpm blog g
 
   Options
   --title, -t     Set article title

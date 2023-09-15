@@ -5,7 +5,7 @@
   "scripts": {
     "build:js": "mkdir ../docs/assets/js && cp src/theme-switcher.js ../docs/assets/js/theme-switcher.js",
     "build:svg": "mkdir ../docs/assets/svg && cp src/dark.svg ../docs/assets/svg/dark.svg && cp src/light.svg ../docs/assets/svg/light.svg",
-    "build": "pnpm run build:js && pnpm run build:svg"
+    "build": "pnpm build:js && pnpm build:svg"
   },
   "author": {
     "name": "Jeroen Peeters",

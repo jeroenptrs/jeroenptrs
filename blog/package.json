@@ -5,9 +5,10 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "start": "pnpm run format && tsx src/run.ts",
-    "build": "export IGNORE_NOT_PUBLISHED=true && pnpm run start && pnpm run format:html",
-    "build:design": "cd ../design-system && pnpm run build",
+    "start": "pnpm format && tsx src/run.ts",
+    "build": "export IGNORE_NOT_PUBLISHED=true && pnpm start && pnpm format:html",
+    "build:design": "cd ../design-system && pnpm build",
+    "build:wc": "cd ../web-components && pnpm build",
     "watch": "tsx watch src/watch.ts",
     "format": "deno fmt && deno lint",
     "format:html": "prettier -w ../docs/{*.html,**/*.html}",
