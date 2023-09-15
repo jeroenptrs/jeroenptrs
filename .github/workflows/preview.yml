@@ -32,3 +32,7 @@ jobs:
         run: |
           npm i -g surge
           surge ./docs jeroenptrs-preview.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      
+      - name: Show Surge URL in summary
+        run: |
+          echo "Deployed to: [https://jeroenptrs-preview.surge.sh](https://jeroenptrs-preview.surge.sh)" >> $GITHUB_STEP_SUMMARY
