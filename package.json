@@ -7,6 +7,7 @@
   "scripts": {
     "blog": "cd blog && pnpm",
     "design": "cd design-system && pnpm",
+    "deps": "pnpm blog install && pnpm design install",
     "wc": "cd web-components && pnpm",
     "dev": "concurrently \"serve docs\" \"pnpm blog watch\" \"pnpm design watch\"",
     "build": "pnpm blog build && pnpm design build:prod && pnpm wc build && pnpm cname",
