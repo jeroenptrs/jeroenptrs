@@ -11,6 +11,7 @@
     "wc": "cd web-components && pnpm",
     "dev": "concurrently \"serve docs\" \"pnpm blog watch\" \"pnpm design watch\"",
     "build": "pnpm blog build && pnpm design build:prod && pnpm wc build && pnpm cname",
+    "build:dev": "pnpm blog start && pnpm design build:prod && pnpm wc build && pnpm cname",
     "cname": "cp CNAME docs/CNAME"
   },
   "author": {
