@@ -29,7 +29,10 @@ jobs:
           pnpm deps
           pnpm build
       
-      - name: Deploy
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and push if it changed
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<contact@jeroenpeeters.be>"
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: deploy"
+          git push
