@@ -41,7 +41,7 @@ export default function HtmlShell(
             <div className="flag pansexual" />
             <Github />
           </div>
-          <a>rss</a>
+          <a href="/rss.xml">rss</a>
         </footer>
         <script src="/assets/js/theme-switcher.js"></script>
       </body>

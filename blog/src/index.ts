@@ -1,7 +1,8 @@
 import { join, parse, resolve } from "node:path";
 
-import { rimraf } from "rimraf";
 import chalk from "chalk";
+import { Feed } from "feed";
+import { rimraf } from "rimraf";
 
 import handleMdxData from "./handleMdxData";
 import buildReactComponent from "./buildReactComponent";
@@ -129,4 +130,40 @@ export default async function pageGeneration(): Promise<void> {
 
     console.log(chalk.green(`Generated tag ${tag}`));
   }
+
+  console.log("🗞️  Processing rss");
+  const feed = new Feed({
+    title: "jeroenpeeters.be",
+    description: "Personal blog of Jeroen Peeters",
+    id: "https://jeroenpeeters.be",
+    link: "https://jeroenpeeters.be",
+    language: "en",
+    favicon: "https://jeroenpeeters.be/favicon.ico",
+    copyright: `All rights reserved ${
+      (new Date()).getFullYear()
+    }, Jeroen Peeters`,
+    author: {
+      name: "Jeroen Peeters",
+      email: "contact@jeroenpeeters.be",
+      link: "https://jeroenpeeters.be",
+    },
+  });
+
+  for (const page of data.pages) {
+    feed.addItem({
+      title: page.title,
+      id: page.file,
+      link: `https://jeroenpeeters.be/${page.file}`,
+      description: page.description,
+      content: page.description,
+      date: new Date(page.metadata.published || page.metadata.created),
+    });
+  }
+
+  for (const tag in data.tags) {
+    feed.addCategory(tag);
+  }
+
+  await writeToFile(resolve(folderPath, MAIN_FOLDER, "rss.xml"), feed.rss2());
+  console.log(chalk.green(`Generated rss feed`));
 }
