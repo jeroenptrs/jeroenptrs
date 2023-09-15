@@ -11,8 +11,7 @@
     "wc": "cd web-components && pnpm",
     "dev": "concurrently \"serve docs\" \"pnpm blog watch\" \"pnpm design watch\"",
     "build": "pnpm blog build && pnpm design build:prod && pnpm wc build && pnpm cname",
-    "cname": "cp CNAME docs/CNAME",
-    "prepare": "husky install"
+    "cname": "cp CNAME docs/CNAME"
   },
   "author": {
     "name": "Jeroen Peeters",
@@ -21,7 +20,6 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.0",
-    "husky": "^8.0.0",
     "serve": "^14.2.0"
   }
 }
