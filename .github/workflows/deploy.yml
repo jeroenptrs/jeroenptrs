@@ -35,3 +35,7 @@ jobs:
           git add .
           git diff --quiet && git diff --staged --quiet || git commit -m "chore: deploy"
           git push
+
+      - name: Show blog URL in summary
+        run: |
+          echo "Deployed to: [https://jeroenpeeters.be](https://jeroenpeeters.be)" >> $GITHUB_STEP_SUMMARY
