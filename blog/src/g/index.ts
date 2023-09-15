@@ -12,6 +12,7 @@ import gPublishMdx from "./gPublishMdx";
 import askUpdateChoices from "./askUpdateChoices";
 import gUpdateMdx from "./gUpdateMdx";
 
+// TODO: add -d flag for description, maybe.
 const cli = meow(
   `
   Usage

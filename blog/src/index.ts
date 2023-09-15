@@ -37,9 +37,13 @@ export default async function pageGeneration(): Promise<void> {
     }
 
     if (parsedInputFile.ext === ".mdx") {
-      const { title, tags: _tags, metadata } = await handleMdxData(
+      const { title, tags: _tags, metadata, description } = await handleMdxData(
         inputFilePath,
       );
+
+      if (!parsedPage.startsWith("entries")) {
+        continue;
+      }
 
       if (process.env["IGNORE_NOT_PUBLISHED"] && !metadata.published) {
         console.log(chalk.yellow(`Skipping ${page}`));
@@ -58,6 +62,7 @@ export default async function pageGeneration(): Promise<void> {
       data.pages.push({
         title,
         metadata,
+        description,
         file: parsedPage,
       });
     }
@@ -80,7 +85,10 @@ export default async function pageGeneration(): Promise<void> {
         inputFilePath,
       );
 
-      if (process.env["IGNORE_NOT_PUBLISHED"] && !metadata.published) {
+      if (
+        process.env["IGNORE_NOT_PUBLISHED"] && !metadata.published &&
+        parsedPage.startsWith("entries")
+      ) {
         console.log(chalk.yellow(`Skipping ${page}`));
         continue;
       }
@@ -103,13 +111,12 @@ export default async function pageGeneration(): Promise<void> {
       renderedComponent,
     );
 
-    console.log(chalk.green(`Generated ${page}`));
+    console.log(chalk.green(`Generated ${parsedPage}`));
   }
 
   console.log("🔖 Processing tags");
   for await (const [tag, tagArray] of Object.entries(data.tags)) {
     const renderedComponent = buildTagComponent(tag, tagArray);
-
     await writeToFile(
       resolve(
         folderPath,

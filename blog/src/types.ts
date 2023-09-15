@@ -15,6 +15,7 @@ export type TData = {
   pages: {
     file: string;
     title: string;
+    description: string;
     metadata: TMetadata;
   }[];
   tags: TTags;
