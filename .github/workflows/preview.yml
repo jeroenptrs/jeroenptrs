@@ -31,4 +31,4 @@ jobs:
       - name: Deploy to Surge
         run: |
           npm i -g surge
-          surge ./build jeroenptrs-preview.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+          surge ./docs jeroenptrs-preview.surge.sh --token ${{ secrets.SURGE_TOKEN }}
