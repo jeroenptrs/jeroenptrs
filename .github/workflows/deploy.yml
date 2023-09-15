@@ -21,6 +21,10 @@ jobs:
         with:
           version: 8
 
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
       - run: |
           pnpm deps
           pnpm build
