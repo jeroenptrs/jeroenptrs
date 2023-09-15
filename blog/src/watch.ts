@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import chokidar from "chokidar";
 
 import pageGeneration from ".";
 import { exec } from "./utils";
@@ -34,5 +35,7 @@ async function watch() {
     chalk.greenBright.bold(`✨ Done in ${Math.abs(msDiff / 1000)}s!`),
   );
 }
+
+chokidar.watch("pages").on("change", watch);
 
 watch();
