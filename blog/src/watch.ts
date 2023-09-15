@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import chokidar from "chokidar";
 
 import pageGeneration from ".";
 import { exec } from "./utils";
@@ -14,16 +15,19 @@ async function watch() {
   );
   console.log(chalk.bgYellow.bold("----------------------\n"));
 
-  await exec("pnpm", ["run", "format"], { stdio: "inherit" });
+  await exec("pnpm", ["format"], { stdio: "inherit" });
   console.log("");
 
   await pageGeneration();
   console.log("");
 
-  await exec("pnpm", ["run", "format:html"], { stdio: "inherit" });
+  await exec("pnpm", ["format:html"], { stdio: "inherit" });
   console.log("");
 
-  await exec("pnpm", ["run", "build:design"], { stdio: "inherit" });
+  await exec("pnpm", ["build:design"], { stdio: "inherit" });
+  console.log("");
+
+  await exec("pnpm", ["build:wc"], { stdio: "inherit" });
   console.log("");
 
   const msDiff = Math.abs(now - Date.now());
@@ -31,5 +35,7 @@ async function watch() {
     chalk.greenBright.bold(`✨ Done in ${Math.abs(msDiff / 1000)}s!`),
   );
 }
+
+chokidar.watch("pages").on("change", watch);
 
 watch();

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>jeroenpeeters.be</title>
+        <link>https://jeroenpeeters.be</link>
+        <description>Personal blog of Jeroen Peeters</description>
+        <lastBuildDate>Fri, 15 Sep 2023 20:48:59 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <copyright>All rights reserved 2023, Jeroen Peeters</copyright>
+    </channel>
+</rss>
