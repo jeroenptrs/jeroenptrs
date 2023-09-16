@@ -15,6 +15,7 @@ export default function HtmlShell(
       <head>
         <title>{title}</title>
         <link rel="stylesheet" href="/assets/css/index.css" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta
