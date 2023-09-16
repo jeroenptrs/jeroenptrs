@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build:prodcss": "parcel build src/index.scss --no-cache --no-source-maps --dist-dir ../docs/assets/css",
-    "build:prod": "pnpm build:prodcss",
+    "build:prod": "pnpm build:prodcss && pnpm build:ico",
     "build:css": "parcel build src/index.scss --no-cache --dist-dir ../docs/assets/css",
     "build:ico": "cp src/favicon.ico ../docs/favicon.ico",
     "build": "pnpm build:css && pnpm build:ico",
