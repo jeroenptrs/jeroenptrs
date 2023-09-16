@@ -8,7 +8,7 @@ export default function TagPage({ tag }: { tag: Array<TTag> }) {
       {tag.map(({ title, path }) => (
         <article key={title}>
           <a href={url(path)}>
-            <h1>{title}</h1>
+            <h2>{title}</h2>
           </a>
         </article>
       ))}

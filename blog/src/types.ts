@@ -17,6 +17,7 @@ export type TData = {
     title: string;
     description: string;
     metadata: TMetadata;
+    tags: string[];
   }[];
   tags: TTags;
 };

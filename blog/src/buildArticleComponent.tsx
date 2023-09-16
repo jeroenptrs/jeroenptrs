@@ -13,7 +13,7 @@ export default function buildArticleComponent(
   // TODO: handle tags and metadata
   return `<!doctype html>${
     renderToString(
-      <HtmlShell title={title}>
+      <HtmlShell title={title} tags={tags} metadata={metadata}>
         <Component />
       </HtmlShell>,
     )

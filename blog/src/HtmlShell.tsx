@@ -1,19 +1,34 @@
 import Github from "./Github";
+import { TMetadata } from "./types";
 
 type THtmlShellProps = React.PropsWithChildren<{
   title?: string;
+  tags?: string[];
+  metadata?: TMetadata;
 }>;
 
 export default function HtmlShell(
-  { title = "jeroenpeeters.be", children }: THtmlShellProps,
+  { title = "jeroenpeeters.be", children, metadata, tags }: THtmlShellProps,
 ) {
   return (
-    <html data-theme="dark">
+    <html lang="en" data-theme="dark">
       <head>
         <title>{title}</title>
         <link rel="stylesheet" href="/assets/css/index.css" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+          name="author"
+          content={(metadata && metadata?.authors?.length > 0)
+            ? metadata?.authors?.join(", ")
+            : "Jeroen Peeters"}
+        />
+        {tags && tags?.length > 0 && (
+          <meta
+            name="keywords"
+            content={tags.map((tag) => tag.replace("-", " ")).join(", ")}
+          />
+        )}
       </head>
       <body>
         <nav className="container">

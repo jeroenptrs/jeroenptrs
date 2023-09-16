@@ -64,6 +64,7 @@ export default async function pageGeneration(): Promise<void> {
         title,
         metadata,
         description,
+        tags: _tags,
         file: parsedPage,
       });
     }
@@ -157,6 +158,7 @@ export default async function pageGeneration(): Promise<void> {
       description: page.description,
       content: page.description,
       date: new Date(page.metadata.published || page.metadata.created),
+      category: page.tags.map((name) => ({ name })),
     });
   }
 
