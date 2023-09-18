@@ -103,6 +103,11 @@ body {
   }
 }
 
+p img {
+  display: block;
+  margin: 0 auto;
+}
+
 /* THEME SWITCHER */
 
 $size: calc(0.9rem - (var(--pico-border-width) * 2));

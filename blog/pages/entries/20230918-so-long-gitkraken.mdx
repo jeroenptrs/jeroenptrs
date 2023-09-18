@@ -1,0 +1,51 @@
+export const title = "So long, GitKraken";
+export const tags = ["git","tooling","software-failure"];
+export const metadata = {"created":1695064181386,"authors":["Jeroen Peeters"],"published":1695067757871};
+export const description = "After nearly 6 years of using my favourite Git GUI, a disastrous outage led me to turning over a new leaf.";
+
+# {title}
+
+<blockquote>{description}</blockquote>
+
+On September 18th 2023, GitKraken experienced an outage impacting their licensing servers, that lasted for several hours.
+The immediate result was that every paid user was effectively deemed a "Free Plan" user, completely locking them out of private repositories (access to private repos being a paid feature).
+Users would also get a notification that their subscription had expired, prompting confusion. Especially with anyone who only recently had renewed their yearly subscription.
+
+People immediately took to Twitter, waiting for an acknowledgement from the GitKraken team that they were aware of the issue and were working on a fix.
+Unfortunately, it took the GitKraken team several **hours** to formulate said reply, paired with an update to their status page.
+This update however, provided little to no information on the actual issue, aside from stating partial disruption:
+
+![GitKraken status page](https://i.imgur.com/J0XBdKS.jpg "The GitKraken status page during the outage, only showing a 'Partial Disruption' notice.")
+
+## Non-negotiable
+
+That said, the lack of clear and timely communication was not what caused me to switch. What did was the following:
+
+- The GitKraken client performs no caching of subscription tokens
+- it also doesn't have any kind of grace period
+- let alone a gracious response to cloud outages
+
+This made me effectively incapable of using their software in my specific professional setting:
+
+![GitKraken outage](https://i.imgur.com/4YaFUhL.png "Many users received this message during the outage, saying The Free Plan does not support private repositories.")
+
+I was unable to commit to a private repository for hours, even though my subscription was valid until February 2024.  
+Regardless of how long I had been using GitKraken problem-free, and regardless of how much I loved their products, this was and still is a non-negotiable for me.
+
+## A new leaf... er fork
+
+Thus began a search for a new Git GUI client.
+For critical and immediate changes I temporarily relied on VS Code's Git client, which was not ideal.  
+I prefer having a view on changes inside the repository, not just my (un)staged changes.
+I'm working in a collaborative environment after all.
+
+After a quick search through popular Git clients, I eventually followed up on a colleague's recommendation and tried out [Fork](https://fork.dev).
+I must say, integrating with a VPN-locked, private Bitbucket repository actually felt so better much compared to GitKraken! I was not expecting that.  
+Additionally I installed [GitHub Desktop](https://desktop.github.com/) for any personal work that could benefit from it, but I honestly doubt that I'll need it anytime soon.
+
+Will Fork last me another 6 years like GitKraken did? Only time will tell, but I have committed to paying their one-time fee, once I'm used to it after a couple weeks of usage.
+
+And, who knows!
+Hopefully GitKraken improves their disaster recovery protocol as well as graciously handling outages.
+Especially on the end-user's side!
+I might even come back if they do, but for now I'm sticking with Fork 🩵.

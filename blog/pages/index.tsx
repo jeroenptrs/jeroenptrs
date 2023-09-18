@@ -25,7 +25,7 @@ export default function Index({ pages }: { pages: TData["pages"] }) {
             </h6>
           </hgroup>
         </article>
-      ))}
+      )).reverse()}
     </>
   );
 }
