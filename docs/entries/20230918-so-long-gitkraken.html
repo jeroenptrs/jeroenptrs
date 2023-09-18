@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <title>So long, GitKraken</title>
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="author" content="Jeroen Peeters" />
+    <meta name="keywords" content="git, tooling, software failure" />
+  </head>
+  <body>
+    <nav class="container">
+      <ul>
+        <li><a class="contrast" href="/">Jeroen Peeters</a></li>
+      </ul>
+      <ul>
+        <li class="nav-ts"><theme-switcher></theme-switcher></li>
+      </ul>
+    </nav>
+    <main class="container">
+      <h1>So long, GitKraken</h1>
+      <blockquote>
+        After nearly 6 years of using my favourite Git GUI, a disastrous outage
+        led me to turning over a new leaf.
+      </blockquote>
+      <p>
+        On September 18th 2023, GitKraken experienced an outage impacting their
+        licensing servers, that lasted for several hours. The immediate result
+        was that every paid user was effectively deemed a &quot;Free Plan&quot;
+        user, completely locking them out of private repositories (access to
+        private repos being a paid feature). Users would also get a notification
+        that their subscription had expired, prompting confusion. Especially
+        with anyone who only recently had renewed their yearly subscription.
+      </p>
+      <p>
+        People immediately took to Twitter, waiting for an acknowledgement from
+        the GitKraken team that they were aware of the issue and were working on
+        a fix. Unfortunately, it took the GitKraken team several
+        <strong>hours</strong> to formulate said reply, paired with an update to
+        their status page. This update however, provided little to no
+        information on the actual issue, aside from stating partial disruption:
+      </p>
+      <p>
+        <img
+          src="https://i.imgur.com/J0XBdKS.jpg"
+          alt="GitKraken status page"
+          title="The GitKraken status page during the outage, only showing a &#x27;Partial Disruption&#x27; notice."
+        />
+      </p>
+      <h2>Non-negotiable</h2>
+      <p>
+        That said, the lack of clear and timely communication was not what
+        caused me to switch. What did was the following:
+      </p>
+      <ul>
+        <li>The GitKraken client performs no caching of subscription tokens</li>
+        <li>it also doesn&#x27;t have any kind of grace period</li>
+        <li>let alone a gracious response to cloud outages</li>
+      </ul>
+      <p>
+        This made me effectively incapable of using their software in my
+        specific professional setting:
+      </p>
+      <p>
+        <img
+          src="https://i.imgur.com/4YaFUhL.png"
+          alt="GitKraken outage"
+          title="Many users received this message during the outage, saying The Free Plan does not support private repositories."
+        />
+      </p>
+      <p>
+        I was unable to commit to a private repository for hours, even though my
+        subscription was valid until February 2024.<br />
+        <!-- -->Regardless of how long I had been using GitKraken problem-free,
+        and regardless of how much I loved their products, this was and still is
+        a non-negotiable for me.
+      </p>
+      <h2>A new leaf... er fork</h2>
+      <p>
+        Thus began a search for a new Git GUI client. For critical and immediate
+        changes I temporarily relied on VS Code&#x27;s Git client, which was not
+        ideal.<br />
+        <!-- -->I prefer having a view on changes inside the repository, not
+        just my (un)staged changes. I&#x27;m working in a collaborative
+        environment after all.
+      </p>
+      <p>
+        After a quick search through popular Git clients, I eventually followed
+        up on a colleague&#x27;s recommendation and tried out
+        <a href="https://fork.dev">Fork</a>. I must say, integrating with a
+        VPN-locked, private Bitbucket repository actually felt so better much
+        compared to GitKraken! I was not expecting that.<br />
+        <!-- -->Additionally I installed
+        <a href="https://desktop.github.com/">GitHub Desktop</a> for any
+        personal work that could benefit from it, but I honestly doubt that
+        I&#x27;ll need it anytime soon.
+      </p>
+      <p>
+        Will Fork last me another 6 years like GitKraken did? Only time will
+        tell, but I have committed to paying their one-time fee, once I&#x27;m
+        used to it after a couple weeks of usage.
+      </p>
+      <p>
+        And, who knows! Hopefully GitKraken improves their disaster recovery
+        protocol as well as graciously handling outages. Especially on the
+        end-user&#x27;s side! I might even come back if they do, but for now
+        I&#x27;m sticking with Fork 🩵.
+      </p>
+    </main>
+    <footer class="container">
+      <div class="icons">
+        <div class="flag pansexual"></div>
+        <a
+          href="https://github.com/jeroenptrs"
+          target="_blank"
+          class="gh-container"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="gh-svg"
+            viewBox="0 0 98 96"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+              class="gh"
+            ></path></svg
+        ></a>
+      </div>
+      <a href="/rss.xml">rss</a>
+    </footer>
+    <script src="/assets/js/theme-switcher.js"></script>
+  </body>
+</html>
