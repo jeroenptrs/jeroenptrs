@@ -39,8 +39,8 @@ devDependencies:
     specifier: ^9.2.10
     version: 9.2.10
   meow:
-    specifier: ^12.0.1
-    version: 12.1.1
+    specifier: ^13.0.0
+    version: 13.0.0
   prettier:
     specifier: ^3.0.1
     version: 3.0.3
@@ -1161,9 +1161,9 @@ packages:
       '@types/mdast': 3.0.12
     dev: true
 
-  /meow@12.1.1:
-    resolution: {integrity: sha512-BhXM0Au22RwUneMPwSCnyhTOizdWoIEPU9sp0Aqa1PnDMR5Wv2FGXYDjuzJEIX+Eo2Rb8xuYe5jrnm5QowQFkw==}
-    engines: {node: '>=16.10'}
+  /meow@13.0.0:
+    resolution: {integrity: sha512-4Hu+75Vo7EOR+8C9RmkabfLijuwd9SrzQ8f0SyC4qZZwU6BlxeOt5ulF3PGCpcMJX4hI+ktpJhea0P6PN1RiWw==}
+    engines: {node: '>=18'}
     dev: true
 
   /micromark-core-commonmark@1.1.0:
