@@ -15,18 +15,20 @@ export function padFactory(base: number) {
 export function useSpacing() {
 	const { width } = useWindowDimensions();
 
-	const minWidth = baseDimensions.w + 6 * baseDimensions.padding;
-	const isSmallScreen = width <= minWidth;
+	const minWidth = 416; // 6 is for some spacing on web
+	const isSmallScreen = width < minWidth;
+	const isSmallPhone = width <= (minWidth - 32);
 	const smallScreenDimensions = {
 		w: 224,
 		h: 202,
 		padding: 16,
 	};
 
-	const dimensions = isSmallScreen ? smallScreenDimensions : baseDimensions;
+	const dimensions = isSmallPhone ? smallScreenDimensions : baseDimensions;
 	return {
 		minWidth,
 		isSmallScreen,
+		isSmallPhone,
 		dimensions,
 		pad: padFactory(dimensions.padding),
 	};

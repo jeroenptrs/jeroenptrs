@@ -1,6 +1,6 @@
 import { DeviceType, deviceType } from "expo-device";
 import type { PropsWithChildren } from "react";
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { BackgroundColor, GameBoyBackgroundColor } from "@/constants/colors";
@@ -8,8 +8,8 @@ import { useSpacing } from "@/constants/dimensions";
 
 export function Container({ children }: PropsWithChildren<unknown>) {
 	const insets = useSafeAreaInsets();
-	const { dimensions, isSmallScreen, pad } = useSpacing();
-	const showOuter = deviceType !== DeviceType.PHONE && !isSmallScreen;
+	const { dimensions, isSmallScreen, isSmallPhone, pad } = useSpacing();
+	const showOuter = (Platform.OS === "web" && !isSmallScreen) || (deviceType !== DeviceType.PHONE && !isSmallPhone);
 	return (
 		<View
 			style={{
