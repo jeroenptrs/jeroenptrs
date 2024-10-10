@@ -53,7 +53,7 @@ const GAMEPAD_POLLING_INTERVAL = 1000 / 60 / 4; // When activated, poll for game
 const GAMEPAD_KEYMAP_STANDARD_STR = "standard"; // Try to use "standard" HTML5 mapping config if available
 
 const $ = document.querySelector.bind(document);
-let emulator = null;
+window.emulator = null;
 
 const controllerEl = $("#controller");
 const dpadEl = $("#controller_dpad");
@@ -104,15 +104,15 @@ class VM {
 	set paused(newPaused) {
 		const oldPaused = this.paused_;
 		this.paused_ = newPaused;
-		if (!emulator) return;
+		if (!window.emulator) return;
 		if (newPaused === oldPaused) return;
 		if (newPaused) {
-			emulator.pause();
-			this.ticks = emulator.ticks;
-			this.rewind.minTicks = emulator.rewind.oldestTicks;
-			this.rewind.maxTicks = emulator.rewind.newestTicks;
+			window.emulator.pause();
+			this.ticks = window.emulator.ticks;
+			this.rewind.minTicks = window.emulator.rewind.oldestTicks;
+			this.rewind.maxTicks = window.emulator.rewind.newestTicks;
 		} else {
-			emulator.resume();
+			window.emulator.resume();
 		}
 	}
 
@@ -121,8 +121,8 @@ class VM {
 	}
 
 	updateExtRam() {
-		if (!emulator) return;
-		const extram = emulator.getExtRam();
+		if (!window.emulator) return;
+		const extram = window.emulator.getExtRam();
 		localStorage.setItem("extram", JSON.stringify(Array.from(extram)));
 	}
 }
@@ -134,8 +134,8 @@ const vm = new VM();
 	const response = await fetch(ROM_FILENAME);
 	const romBuffer = await response.arrayBuffer();
 	const extRam = new Uint8Array(JSON.parse(localStorage.getItem("extram")));
-	window.emulator = Emulator.start(await binjgbPromise, romBuffer, extRam);
-	emulator.setBuiltinPalette(vm.palIdx);
+	Emulator.start(await binjgbPromise, romBuffer, extRam);
+	window.emulator.setBuiltinPalette(vm.palIdx);
 })();
 
 function makeWasmBuffer(module, ptr, size) {
@@ -145,15 +145,14 @@ function makeWasmBuffer(module, ptr, size) {
 class Emulator {
 	static start(module, romBuffer, extRamBuffer) {
 		Emulator.stop();
-		emulator = new Emulator(module, romBuffer, extRamBuffer);
-		emulator.run();
-		return emulator;
+		window.emulator = new Emulator(module, romBuffer, extRamBuffer);
+		window.emulator.run();
 	}
 
 	static stop() {
-		if (emulator) {
-			emulator.destroy();
-			emulator = null;
+		if (window.emulator) {
+			window.emulator.destroy();
+			window.emulator = null;
 		}
 	}
 
@@ -190,6 +189,7 @@ class Emulator {
 
 		this.bindKeys();
 		this.bindTouch();
+		this.setFromParent();
 
 		this.touchEnabled = "ontouchstart" in document.documentElement;
 		this.updateOnscreenGamepad();
@@ -201,6 +201,7 @@ class Emulator {
 		this.gamepad.shutdown();
 		this.unbindTouch();
 		this.unbindKeys();
+		this.unsetFromParent();
 		this.cancelAnimationFrame();
 		clearInterval(this.rewindIntervalId);
 		this.rewind.destroy();
@@ -291,7 +292,7 @@ class Emulator {
 					((REWIND_FACTOR * REWIND_UPDATE_MS) / 1000) * CPU_TICKS_PER_SECOND;
 				const rewindTo = Math.max(oldest, start - delta);
 				this.rewindToTicks(rewindTo);
-				vm.ticks = emulator.ticks;
+				vm.ticks = window.emulator.ticks;
 			}, REWIND_UPDATE_MS);
 		} else {
 			clearInterval(this.rewindIntervalId);
@@ -560,6 +561,60 @@ class Emulator {
 		window.removeEventListener("keyup", this.boundKeyUp);
 	}
 
+	setFromParent() {
+		this.fromParentStartTrue = () => this.setJoypStart(true);
+		this.fromParentStartFalse = () => this.setJoypStart(false);
+		this.fromParentSelectTrue = () => this.setJoypSelect(true);
+		this.fromParentSelectFalse = () => this.setJoypSelect(false);
+		this.fromParentATrue = () => this.setJoypA(true);
+		this.fromParentAFalse = () => this.setJoypA(false);
+		this.fromParentBTrue = () => this.setJoypB(true);
+		this.fromParentBFalse = () => this.setJoypB(false);
+		this.fromParentUpTrue = () => this.setJoypUp(true);
+		this.fromParentUpFalse = () => this.setJoypUp(false);
+		this.fromParentDownTrue = () => this.setJoypDown(true);
+		this.fromParentDownFalse = () => this.setJoypDown(false);
+		this.fromParentLeftTrue = () => this.setJoypLeft(true);
+		this.fromParentLeftFalse = () => this.setJoypLeft(false);
+		this.fromParentRightTrue = () => this.setJoypRight(true);
+		this.fromParentRightFalse = () => this.setJoypRight(false);
+		window.addEventListener("start-true", this.fromParentStartTrue);
+		window.addEventListener("start-false", this.fromParentStartFalse);
+		window.addEventListener("select-true", this.fromParentSelectTrue);
+		window.addEventListener("select-false", this.fromParentSelectFalse);
+		window.addEventListener("a-true", this.fromParentATrue);
+		window.addEventListener("a-false", this.fromParentAFalse);
+		window.addEventListener("b-true", this.fromParentBTrue);
+		window.addEventListener("b-false", this.fromParentBFalse);
+		window.addEventListener("up-true", this.fromParentUpTrue);
+		window.addEventListener("up-false", this.fromParentUpFalse);
+		window.addEventListener("down-true", this.fromParentDownTrue);
+		window.addEventListener("down-false", this.fromParentDownFalse);
+		window.addEventListener("left-true", this.fromParentLeftTrue);
+		window.addEventListener("left-false", this.fromParentLeftFalse);
+		window.addEventListener("right-true", this.fromParentRightTrue);
+		window.addEventListener("right-false", this.fromParentRightFalse);
+	}
+
+	unsetFromParent() {
+		window.removeEventListener("start-true", this.fromParentStartTrue);
+		window.removeEventListener("start-false", this.fromParentStartFalse);
+		window.removeEventListener("select-true", this.fromParentSelectTrue);
+		window.removeEventListener("select-false", this.fromParentSelectFalse);
+		window.removeEventListener("a-true", this.fromParentATrue);
+		window.removeEventListener("a-false", this.fromParentAFalse);
+		window.removeEventListener("b-true", this.fromParentBTrue);
+		window.removeEventListener("b-false", this.fromParentBFalse);
+		window.removeEventListener("up-true", this.fromParentUpTrue);
+		window.removeEventListener("up-false", this.fromParentUpFalse);
+		window.removeEventListener("down-true", this.fromParentDownTrue);
+		window.removeEventListener("down-false", this.fromParentDownFalse);
+		window.removeEventListener("left-true", this.fromParentLeftTrue);
+		window.removeEventListener("left-false", this.fromParentLeftFalse);
+		window.removeEventListener("right-true", this.fromParentRightTrue);
+		window.removeEventListener("right-false", this.fromParentRightFalse);
+	}
+
 	keyDown(event) {
 		if (event.key === "w" && (event.metaKey || event.ctrlKey)) {
 			return;
@@ -609,7 +664,7 @@ class Emulator {
 		}
 		if (isKeyDown) {
 			vm.palIdx = (vm.palIdx + PALETTES.length - 1) % PALETTES.length;
-			emulator.setBuiltinPalette(vm.palIdx);
+			window.emulator.setBuiltinPalette(vm.palIdx);
 		}
 	}
 
@@ -619,7 +674,7 @@ class Emulator {
 		}
 		if (isKeyDown) {
 			vm.palIdx = (vm.palIdx + 1) % PALETTES.length;
-			emulator.setBuiltinPalette(vm.palIdx);
+			window.emulator.setBuiltinPalette(vm.palIdx);
 		}
 	}
 
