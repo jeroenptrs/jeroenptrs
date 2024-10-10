@@ -1,5 +1,7 @@
-import { Provider } from "@/constants/messaging";
 import { Stack } from "expo-router";
+
+import "@/assets/css/index.css";
+import { Provider } from "@/constants/messaging";
 
 export default function RootLayout() {
 	return (
