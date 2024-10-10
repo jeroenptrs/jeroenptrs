@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 
 import {
@@ -6,18 +6,21 @@ import {
 	PurpleButton,
 } from "@/constants/colors";
 import { useSpacing } from "@/constants/dimensions";
+import { PostMessageContext } from "@/constants/messaging";
 
-function Circle() {
+function Circle({type}: { type: "a" | "b" }) {
 	const { default: backgroundColor, pressed } = PurpleButton;
 	const { pad } = useSpacing();
-
+	const [postMessage] = useContext(PostMessageContext);
 	const [isPressed, setIsPressed] = useState(false);
 	const pressIn = useCallback(() => {
 		setIsPressed(true);
-	}, []);
+		postMessage(`${type}-true`);
+	}, [postMessage]);
 	const pressOut = useCallback(() => {
 		setIsPressed(false);
-	}, []);
+		postMessage(`${type}-false`);
+	}, [postMessage]);
 	return (
 		<Pressable
 			onPressIn={pressIn}
@@ -55,8 +58,8 @@ export function AB() {
 					height: totalSize,
 				}}
 			>
-				<Circle />
-				<Circle />
+				<Circle type="a" />
+				<Circle type="b" />
 			</View>
 			<View
 				style={{

@@ -17,13 +17,14 @@ export function GameView() {
 	const iFrameRef = useRef<HTMLIFrameElement>();
 
 	const isWeb = Platform.OS === "web";
+	// const uri = "http://localhost:3000";
 	const uri = "https://jeroenpeeters.be/game";
 	const rootOrigin = isWeb ? location.href : "";
 
 	useEffect(() => {
 		if (isWeb) {
 			function postMessage(message: string) {
-				iFrameRef.current?.contentWindow?.postMessage(message, rootOrigin);
+				iFrameRef.current?.contentWindow?.postMessage(message, uri);
 			}
 
 			setPostMessage(() => postMessage);

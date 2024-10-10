@@ -136,6 +136,7 @@ const vm = new VM();
 	const extRam = new Uint8Array(JSON.parse(localStorage.getItem("extram")));
 	Emulator.start(await binjgbPromise, romBuffer, extRam);
 	window.emulator.setBuiltinPalette(vm.palIdx);
+	window.initListener();
 })();
 
 function makeWasmBuffer(module, ptr, size) {
@@ -189,7 +190,6 @@ class Emulator {
 
 		this.bindKeys();
 		this.bindTouch();
-		this.setFromParent();
 
 		this.touchEnabled = "ontouchstart" in document.documentElement;
 		this.updateOnscreenGamepad();
@@ -201,7 +201,6 @@ class Emulator {
 		this.gamepad.shutdown();
 		this.unbindTouch();
 		this.unbindKeys();
-		this.unsetFromParent();
 		this.cancelAnimationFrame();
 		clearInterval(this.rewindIntervalId);
 		this.rewind.destroy();
@@ -559,60 +558,6 @@ class Emulator {
 	unbindKeys() {
 		window.removeEventListener("keydown", this.boundKeyDown);
 		window.removeEventListener("keyup", this.boundKeyUp);
-	}
-
-	setFromParent() {
-		this.fromParentStartTrue = () => window.emulator.setJoypStart(true);
-		this.fromParentStartFalse = () => window.emulator.setJoypStart(false);
-		this.fromParentSelectTrue = () => window.emulator.setJoypSelect(true);
-		this.fromParentSelectFalse = () => window.emulator.setJoypSelect(false);
-		this.fromParentATrue = () => window.emulator.setJoypA(true);
-		this.fromParentAFalse = () => window.emulator.setJoypA(false);
-		this.fromParentBTrue = () => window.emulator.setJoypB(true);
-		this.fromParentBFalse = () => window.emulator.setJoypB(false);
-		this.fromParentUpTrue = () => window.emulator.setJoypUp(true);
-		this.fromParentUpFalse = () => window.emulator.setJoypUp(false);
-		this.fromParentDownTrue = () => window.emulator.setJoypDown(true);
-		this.fromParentDownFalse = () => window.emulator.setJoypDown(false);
-		this.fromParentLeftTrue = () => window.emulator.setJoypLeft(true);
-		this.fromParentLeftFalse = () => window.emulator.setJoypLeft(false);
-		this.fromParentRightTrue = () => window.emulator.setJoypRight(true);
-		this.fromParentRightFalse = () => window.emulator.setJoypRight(false);
-		window.addEventListener("start-true", this.fromParentStartTrue);
-		window.addEventListener("start-false", this.fromParentStartFalse);
-		window.addEventListener("select-true", this.fromParentSelectTrue);
-		window.addEventListener("select-false", this.fromParentSelectFalse);
-		window.addEventListener("a-true", this.fromParentATrue);
-		window.addEventListener("a-false", this.fromParentAFalse);
-		window.addEventListener("b-true", this.fromParentBTrue);
-		window.addEventListener("b-false", this.fromParentBFalse);
-		window.addEventListener("up-true", this.fromParentUpTrue);
-		window.addEventListener("up-false", this.fromParentUpFalse);
-		window.addEventListener("down-true", this.fromParentDownTrue);
-		window.addEventListener("down-false", this.fromParentDownFalse);
-		window.addEventListener("left-true", this.fromParentLeftTrue);
-		window.addEventListener("left-false", this.fromParentLeftFalse);
-		window.addEventListener("right-true", this.fromParentRightTrue);
-		window.addEventListener("right-false", this.fromParentRightFalse);
-	}
-
-	unsetFromParent() {
-		window.removeEventListener("start-true", this.fromParentStartTrue);
-		window.removeEventListener("start-false", this.fromParentStartFalse);
-		window.removeEventListener("select-true", this.fromParentSelectTrue);
-		window.removeEventListener("select-false", this.fromParentSelectFalse);
-		window.removeEventListener("a-true", this.fromParentATrue);
-		window.removeEventListener("a-false", this.fromParentAFalse);
-		window.removeEventListener("b-true", this.fromParentBTrue);
-		window.removeEventListener("b-false", this.fromParentBFalse);
-		window.removeEventListener("up-true", this.fromParentUpTrue);
-		window.removeEventListener("up-false", this.fromParentUpFalse);
-		window.removeEventListener("down-true", this.fromParentDownTrue);
-		window.removeEventListener("down-false", this.fromParentDownFalse);
-		window.removeEventListener("left-true", this.fromParentLeftTrue);
-		window.removeEventListener("left-false", this.fromParentLeftFalse);
-		window.removeEventListener("right-true", this.fromParentRightTrue);
-		window.removeEventListener("right-false", this.fromParentRightFalse);
 	}
 
 	keyDown(event) {

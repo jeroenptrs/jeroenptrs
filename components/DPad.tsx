@@ -1,8 +1,9 @@
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { Pressable, View } from "react-native";
 
 import { BlackButton } from "@/constants/colors";
 import { padFactory, useSpacing } from "@/constants/dimensions";
+import { PostMessageContext } from "@/constants/messaging";
 
 function useButtonPadding() {
 	const { pad } = useSpacing();
@@ -18,17 +19,24 @@ function useButtonPadding() {
 type ButtonType =
 	| { type: undefined }
 	| { type: "horizontal"; position: "left" | "right" }
-	| { type: "vertical"; position: "top" | "bottom" };
+	| { type: "vertical"; position: "up" | "down" };
 
 function Button(props: ButtonType) {
 	const { buttonPadding, contentPadding } = useButtonPadding();
+	const [postMessage] = useContext(PostMessageContext);
 	const [isPressed, setIsPressed] = useState(false);
 	const pressIn = useCallback(() => {
 		setIsPressed(true);
-	}, []);
+		if (props?.type) {
+			postMessage(`${props?.position}-true`)
+		}
+	}, [postMessage]);
 	const pressOut = useCallback(() => {
 		setIsPressed(false);
-	}, []);
+		if (props?.type) {
+			postMessage(`${props?.position}-false`)
+		}
+	}, [postMessage]);
 	const { default: backgroundColor, pressed } = BlackButton;
 	if (typeof props.type === "undefined") {
 		return (
@@ -44,7 +52,6 @@ function Button(props: ButtonType) {
 
 	const { type, position } = props;
 
-	// todo View -> Pressable
 	return (
 		<Pressable
 			onPressIn={pressIn}
@@ -55,13 +62,13 @@ function Button(props: ButtonType) {
 				padding: contentPadding,
 				backgroundColor: isPressed ? pressed : backgroundColor,
 				borderTopLeftRadius:
-					position === "bottom" || position === "right" ? 0 : 2,
+					position === "down" || position === "right" ? 0 : 2,
 				borderTopRightRadius:
-					position === "bottom" || position === "left" ? 0 : 2,
+					position === "down" || position === "left" ? 0 : 2,
 				borderBottomLeftRadius:
-					position === "top" || position === "right" ? 0 : 2,
+					position === "up" || position === "right" ? 0 : 2,
 				borderBottomRightRadius:
-					position === "top" || position === "left" ? 0 : 2,
+					position === "up" || position === "left" ? 0 : 2,
 				shadowColor: "black",
 				shadowRadius: 2,
 				shadowOffset: {
@@ -72,14 +79,14 @@ function Button(props: ButtonType) {
 								? -contentPadding / 2
 								: 0,
 					height:
-						position === "bottom"
+						position === "down"
 							? contentPadding
-							: position !== "top"
+							: position !== "up"
 								? contentPadding / 2
 								: 0,
 				},
-				shadowOpacity: position !== "top" && !isPressed ? 0.1 : 0,
-				top: position === "top" && isPressed ? 2 : 0,
+				shadowOpacity: position !== "up" && !isPressed ? 0.1 : 0,
+				top: position === "up" && isPressed ? 2 : 0,
 				// left: position === "left" && isPressed ? contentPadding : 0,
 			}}
 		/>
@@ -100,7 +107,7 @@ export function DPad() {
 				height: pad(4),
 			}}
 		>
-			<Button type="vertical" position="top" />
+			<Button type="vertical" position="up" />
 			<View
 				style={{
 					flexDirection: "row",
@@ -110,7 +117,7 @@ export function DPad() {
 				<MiddleButton />
 				<Button type="horizontal" position="right" />
 			</View>
-			<Button type="vertical" position="bottom" />
+			<Button type="vertical" position="down" />
 		</View>
 	);
 }
