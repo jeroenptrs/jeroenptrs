@@ -562,22 +562,22 @@ class Emulator {
 	}
 
 	setFromParent() {
-		this.fromParentStartTrue = () => this.setJoypStart(true);
-		this.fromParentStartFalse = () => this.setJoypStart(false);
-		this.fromParentSelectTrue = () => this.setJoypSelect(true);
-		this.fromParentSelectFalse = () => this.setJoypSelect(false);
-		this.fromParentATrue = () => this.setJoypA(true);
-		this.fromParentAFalse = () => this.setJoypA(false);
-		this.fromParentBTrue = () => this.setJoypB(true);
-		this.fromParentBFalse = () => this.setJoypB(false);
-		this.fromParentUpTrue = () => this.setJoypUp(true);
-		this.fromParentUpFalse = () => this.setJoypUp(false);
-		this.fromParentDownTrue = () => this.setJoypDown(true);
-		this.fromParentDownFalse = () => this.setJoypDown(false);
-		this.fromParentLeftTrue = () => this.setJoypLeft(true);
-		this.fromParentLeftFalse = () => this.setJoypLeft(false);
-		this.fromParentRightTrue = () => this.setJoypRight(true);
-		this.fromParentRightFalse = () => this.setJoypRight(false);
+		this.fromParentStartTrue = () => window.emulator.setJoypStart(true);
+		this.fromParentStartFalse = () => window.emulator.setJoypStart(false);
+		this.fromParentSelectTrue = () => window.emulator.setJoypSelect(true);
+		this.fromParentSelectFalse = () => window.emulator.setJoypSelect(false);
+		this.fromParentATrue = () => window.emulator.setJoypA(true);
+		this.fromParentAFalse = () => window.emulator.setJoypA(false);
+		this.fromParentBTrue = () => window.emulator.setJoypB(true);
+		this.fromParentBFalse = () => window.emulator.setJoypB(false);
+		this.fromParentUpTrue = () => window.emulator.setJoypUp(true);
+		this.fromParentUpFalse = () => window.emulator.setJoypUp(false);
+		this.fromParentDownTrue = () => window.emulator.setJoypDown(true);
+		this.fromParentDownFalse = () => window.emulator.setJoypDown(false);
+		this.fromParentLeftTrue = () => window.emulator.setJoypLeft(true);
+		this.fromParentLeftFalse = () => window.emulator.setJoypLeft(false);
+		this.fromParentRightTrue = () => window.emulator.setJoypRight(true);
+		this.fromParentRightFalse = () => window.emulator.setJoypRight(false);
 		window.addEventListener("start-true", this.fromParentStartTrue);
 		window.addEventListener("start-false", this.fromParentStartFalse);
 		window.addEventListener("select-true", this.fromParentSelectTrue);
