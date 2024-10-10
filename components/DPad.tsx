@@ -1,9 +1,9 @@
-import { useCallback, useContext, useState } from "react";
-import { Pressable, View } from "react-native";
+import { useState } from "react";
+import { View } from "react-native";
 
 import { BlackButton } from "@/constants/colors";
 import { padFactory, useSpacing } from "@/constants/dimensions";
-import { PostMessageContext } from "@/constants/messaging";
+import { Pressable } from "@/components/Pressable";
 
 function useButtonPadding() {
 	const { pad } = useSpacing();
@@ -23,20 +23,7 @@ type ButtonType =
 
 function Button(props: ButtonType) {
 	const { buttonPadding, contentPadding } = useButtonPadding();
-	const [postMessage] = useContext(PostMessageContext);
 	const [isPressed, setIsPressed] = useState(false);
-	const pressIn = useCallback(() => {
-		setIsPressed(true);
-		if (props?.type) {
-			postMessage(`${props?.position}-true`)
-		}
-	}, [postMessage]);
-	const pressOut = useCallback(() => {
-		setIsPressed(false);
-		if (props?.type) {
-			postMessage(`${props?.position}-false`)
-		}
-	}, [postMessage]);
 	const { default: backgroundColor, pressed } = BlackButton;
 	if (typeof props.type === "undefined") {
 		return (
@@ -54,8 +41,8 @@ function Button(props: ButtonType) {
 
 	return (
 		<Pressable
-			onPressIn={pressIn}
-			onPressOut={pressOut}
+			type={position}
+			setIsPressed={setIsPressed}
 			style={{
 				height: type === "vertical" ? buttonPadding * 1.5 : buttonPadding,
 				width: type === "horizontal" ? buttonPadding * 1.5 : buttonPadding,
