@@ -17,9 +17,7 @@ export function GameView() {
 	const iFrameRef = useRef<HTMLIFrameElement>();
 
 	const isWeb = Platform.OS === "web";
-	// const uri = "http://localhost:3000";
 	const uri = "https://jeroenpeeters.be/game";
-	const rootOrigin = isWeb ? location.href : "";
 
 	useEffect(() => {
 		if (isWeb) {
@@ -35,7 +33,7 @@ export function GameView() {
 
 			setPostMessage(() => postMessage);
 		}
-	}, [isWeb, rootOrigin, setPostMessage]);
+	}, [isWeb, setPostMessage]);
 
 	return (
 		<View
