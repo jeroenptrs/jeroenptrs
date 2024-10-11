@@ -1,29 +1,30 @@
 {
   "_resourceType": "actor",
-  "id": "c73c195d-5cc8-4417-bdb0-b0c55c4b6188",
-  "_index": 1,
-  "symbol": "actor_3",
-  "prefabId": "",
+  "id": "92069712-b9f1-4b61-9f93-eff014d525f8",
   "name": "",
-  "x": 22,
-  "y": 19,
   "frame": 0,
   "animate": false,
-  "spriteSheetId": "52ad34df-f245-4b2a-b94c-a82af1002871",
-  "paletteId": "",
-  "direction": "left",
+  "spriteSheetId": "40dcd163-9f72-4861-8131-b01eb9baa000",
+  "prefabId": "",
+  "direction": "right",
   "moveSpeed": 1,
   "animSpeed": 15,
+  "paletteId": "",
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
   "prefabScriptOverrides": {},
+  "symbol": "actor_12",
   "script": [
     {
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "Still a work in\nprogress, sorry!"
+          "Again, pleased to\nmeet you! Here's\nsome info about me",
+          "I was born on\nApril 6th 1992",
+          "I live in Belgium\nin the Limburg\nprovince",
+          "My favourite color\nis teal and I have\na cat named Luna!",
+          "Tip: interacting\nwith the rooms\nreveals more info!"
         ],
         "__section": "text",
         "avatarId": "",
@@ -42,12 +43,15 @@
         "closeDelayTime": 0.5,
         "closeDelayFrames": 30
       },
-      "id": "e52b51ce-a804-4f11-bb72-c4d2325ecab0"
+      "id": "84735ed8-7652-4f2c-a6d7-e23056679b01"
     }
   ],
   "startScript": [],
   "updateScript": [],
   "hit1Script": [],
   "hit2Script": [],
-  "hit3Script": []
+  "hit3Script": [],
+  "x": 12,
+  "y": 10,
+  "_index": 0
 }

@@ -1,0 +1,22 @@
+{
+  "_resourceType": "scene",
+  "id": "50c93054-66ce-4217-aa34-447408571acf",
+  "_index": 3,
+  "name": "About Me",
+  "backgroundId": "89191293-256b-4659-8151-d28ac2d980ee",
+  "tilesetId": "",
+  "width": 20,
+  "height": 18,
+  "type": "TOPDOWN",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "003d+0fc+008+0f6+005+0f7+002+0f6+005+0f7+002+0f!0010+0f!002+0f!00c+0f5+002+0f!00c+0f5+002+0f!0010+0f!002+0f!0010+0f!002+0f!002+0f2+005+0f3+004+0f!002+0f!009+0f!00!0f!004+0f!002+0f!002+0f2+005+0f!00!0f6+002+0f!00!0f5+003+0f!009+0f8+002+0f!0010+0f!002+0f!0010+0f4+008+",
+  "autoFadeSpeed": 1,
+  "symbol": "scene_4",
+  "x": 752,
+  "y": 328,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

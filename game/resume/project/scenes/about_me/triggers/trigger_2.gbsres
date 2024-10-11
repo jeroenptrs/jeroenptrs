@@ -1,0 +1,84 @@
+{
+  "_resourceType": "trigger",
+  "id": "5acacce6-5a94-4324-8f2c-cfd230439dbe",
+  "name": "",
+  "prefabId": "",
+  "x": 4,
+  "y": 12,
+  "symbol": "trigger_6",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 1,
+  "script": [
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "92069712-b9f1-4b61-9f93-eff014d525f8",
+        "direction": {
+          "type": "direction",
+          "value": "left"
+        }
+      },
+      "id": "eea03bbc-1537-4439-8cd0-451b99403268"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "",
+        "loopAnim": false
+      },
+      "id": "403704df-67b2-414a-8e57-870ad381ddc2"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "$self$",
+        "direction": {
+          "type": "direction",
+          "value": "right"
+        }
+      },
+      "id": "ffd68720-99e0-4b9b-a3a2-fdf3daf648d6"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Gaming-especially\nPokémon games-has\nhad a lasting",
+          "impact on me. It's\nthe main reason I\nam a developer!!!",
+          "Looking forward to\nnew Pokémon games",
+          "and adding shinies\nto my collection!"
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "4db35e59-eaea-44c3-b798-a879e44cf8da"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "",
+        "loopAnim": true
+      },
+      "id": "33467619-0082-484f-b352-2763a0c63334"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

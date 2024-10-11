@@ -34,27 +34,6 @@
         ],
         "__section": "text"
       }
-    },
-    {
-      "id": "0830a973-dd64-44ad-ad07-a677a31a27aa",
-      "command": "EVENT_SET_VALUE",
-      "args": {
-        "variable": "1",
-        "value": {
-          "type": "true"
-        }
-      }
-    },
-    {
-      "id": "8ffac2a0-a735-40f1-b51e-dd270cc09ba9",
-      "command": "EVENT_ACTOR_SET_DIRECTION",
-      "args": {
-        "actorId": "5cf6eb6c-be62-4efc-9cbb-14a8efac21a8",
-        "direction": {
-          "type": "direction",
-          "value": "right"
-        }
-      }
     }
   ],
   "startScript": [],

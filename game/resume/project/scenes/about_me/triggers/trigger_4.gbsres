@@ -1,0 +1,84 @@
+{
+  "_resourceType": "trigger",
+  "id": "7666345c-9269-4840-b13b-069144d4d993",
+  "name": "",
+  "prefabId": "",
+  "x": 4,
+  "y": 6,
+  "symbol": "trigger_8",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "92069712-b9f1-4b61-9f93-eff014d525f8",
+        "direction": {
+          "type": "direction",
+          "value": "left"
+        }
+      },
+      "id": "856a2be9-4e6d-4043-90d5-56e094bf96cb"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "",
+        "loopAnim": false
+      },
+      "id": "b503d842-5399-4fac-bd4b-b49f3173932a"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "$self$",
+        "direction": {
+          "type": "direction",
+          "value": "right"
+        }
+      },
+      "id": "e3216b85-a64d-4ae3-bd92-1b17c6597eed"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "I thoroughly enjoy\nmechanical\nkeyboards, both",
+          "using them and\nputting them\ntogether!",
+          "My current main\nboards are a\nKeychron Q9 Plus",
+          "and a Wooting 60HE\nfor gaming, both\npretty customized!"
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "2ce54829-ca57-43b1-9f4e-28d1a7b37b4f"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "",
+        "loopAnim": true
+      },
+      "id": "b4abddb1-9509-437c-9ca9-6d37c3f3cd33"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

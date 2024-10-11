@@ -24,8 +24,7 @@
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "Info about me,\nsuch as:",
-          "hobbies,\nlanguage skills..."
+          "About Me\nand hobbies"
         ]
       }
     }

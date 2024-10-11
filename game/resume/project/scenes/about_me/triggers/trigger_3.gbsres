@@ -1,0 +1,82 @@
+{
+  "_resourceType": "trigger",
+  "id": "d7560b4a-a7bf-4e5c-a263-5ed527560227",
+  "name": "",
+  "prefabId": "",
+  "x": 14,
+  "y": 6,
+  "symbol": "trigger_7",
+  "prefabScriptOverrides": {},
+  "width": 4,
+  "height": 1,
+  "script": [
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "92069712-b9f1-4b61-9f93-eff014d525f8",
+        "direction": {
+          "type": "direction",
+          "value": "up"
+        }
+      },
+      "id": "09561886-4da7-4b63-8fb1-7ced5e47a9ba"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "",
+        "loopAnim": false
+      },
+      "id": "3c425c86-f0a6-4a01-994d-937f1e103ae6"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "$self$",
+        "direction": {
+          "type": "direction",
+          "value": "down"
+        }
+      },
+      "id": "74296ffa-e291-440a-832a-8b4e6d1b9bbf"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "I occasionally try\nout recipe testing",
+          "as well as music\nproduction and\n3D-printing!"
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "d17cdb28-c58a-47dd-a055-7c355bf44207"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "",
+        "loopAnim": true
+      },
+      "id": "9c0c8045-9b09-4734-9504-89ec3b282678"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}
