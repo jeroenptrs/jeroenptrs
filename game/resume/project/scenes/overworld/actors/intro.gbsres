@@ -1,0 +1,65 @@
+{
+  "_resourceType": "actor",
+  "id": "5cf6eb6c-be62-4efc-9cbb-14a8efac21a8",
+  "_index": 3,
+  "symbol": "actor_6",
+  "prefabId": "",
+  "name": "Intro",
+  "x": 5,
+  "y": 19,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "40dcd163-9f72-4861-8131-b01eb9baa000",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "b1c3d75d-d579-47af-8f3e-4cd96178fbb0",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Hi and welcome! My\nname is Jeroen.",
+          "Feel free to look\naround and explore",
+          "I'm still working\non some things,",
+          "but it's starting\nto come together!",
+          "The next house has\nsome About Me's",
+          "Top right is my\neducation info",
+          "And top left is my\nwork experience"
+        ],
+        "__section": "text"
+      }
+    },
+    {
+      "id": "0830a973-dd64-44ad-ad07-a677a31a27aa",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "1",
+        "value": {
+          "type": "true"
+        }
+      }
+    },
+    {
+      "id": "8ffac2a0-a735-40f1-b51e-dd270cc09ba9",
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "5cf6eb6c-be62-4efc-9cbb-14a8efac21a8",
+        "direction": {
+          "type": "direction",
+          "value": "right"
+        }
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

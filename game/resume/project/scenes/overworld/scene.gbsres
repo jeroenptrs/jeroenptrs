@@ -1,0 +1,30 @@
+{
+  "_resourceType": "scene",
+  "id": "94c18861-b352-4f49-a64d-52f2e3415077",
+  "_index": 2,
+  "type": "TOPDOWN",
+  "name": "Overworld",
+  "symbol": "scene_outside",
+  "x": 464,
+  "y": 304,
+  "width": 32,
+  "height": 24,
+  "backgroundId": "6d74b76c-0af2-4b24-80fd-3dfde463f483",
+  "tilesetId": "",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "872f61cf-bd62-4e58-92ee-a751e7335fe9"
+      },
+      "id": "5177b82a-d7ca-48d6-b88c-1567971e7ac7"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "0028+0f4+001c+0f!002+0f!001c+0f!002+0f!001c+0f!002+0f!001c+0f!002+0f!001c+0f!002+0f!001c+0f!002+0f!0015+0f5+002+0f!002+0f2+003+0f4+002+0f3+002+0f4+002+0f!001c+0f!002+0f!001c+0f!002+0f18+002+0f4+0019+0f!002+0f!001c+0f!002+0f!001c+0f!002+0f!001c+0f!002+0f!001c+0f!002+0f!008+0f6+002+0f3+002+0f3+002+0f3+002+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f18+00b+0f!00a+0f!003+0f!0010+0f!00a+0f!003+0f!0010+0f!00a+0f!003+0f!009+"
+}
