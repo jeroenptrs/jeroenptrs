@@ -1,12 +1,12 @@
 {
   "_resourceType": "actor",
   "id": "26bced35-c28a-4394-907e-d657789afdb5",
-  "_index": 2,
+  "_index": 1,
   "symbol": "actor_14",
   "prefabId": "",
   "name": "",
-  "x": 15,
-  "y": 11,
+  "x": 2,
+  "y": 12,
   "frame": 0,
   "animate": false,
   "spriteSheetId": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
@@ -20,10 +20,25 @@
   "prefabScriptOverrides": {},
   "script": [
     {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "566c8812-a204-45b5-b93a-c113c10c20de",
+        "direction": {
+          "type": "direction",
+          "value": "down"
+        }
+      },
+      "id": "eb8336a8-4eb2-40ad-bc28-5fee98e60237"
+    },
+    {
       "id": "e2def9ee-3c5c-42fb-90e2-c6d073d97d9b",
       "command": "EVENT_TEXT",
       "args": {
-        "text": "Add sprites to\nassets/sprites"
+        "text": [
+          "Dutch is my native\nlanguage.",
+          "I have a professio\nnal proficiency in\nEnglish, and",
+          "I know a bit of\nGerman and French\nas well."
+        ]
       }
     }
   ],

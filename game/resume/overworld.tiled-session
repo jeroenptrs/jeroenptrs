@@ -25,12 +25,20 @@
         "Tiles_FinalLayout.tsx": {
             "scaleInEditor": 1
         },
+        "indoors-education.tmx": {
+            "scale": 7.26,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 81.06060606060606,
+                "y": 73.00275482093663
+            }
+        },
         "indoors-hobbies.tmx": {
             "scale": 5.925624999999999,
-            "selectedLayer": 0,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 120.07172239215275,
-                "y": 79.99156207151145
+                "x": 95.68610906022573,
+                "y": 78.72587279822804
             }
         },
         "overworld.tmx": {
@@ -43,13 +51,16 @@
         }
     },
     "last.imagePath": "/Users/jeroenpeeters/Projects/Personal/resume/game/resume",
+    "map.height": 18,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 8,
     "map.tileWidth": 8,
+    "map.width": 20,
     "openFiles": [
     ],
     "project": "overworld.tiled-project",
     "recentFiles": [
+        "indoors-education.tmx",
         "GB Studio Indoors BitsAndBobs.tsx",
         "Overworld_Final.tsx",
         "Tiles_FinalLayout.tsx",

@@ -9,7 +9,7 @@
   "y": 10,
   "frame": 0,
   "animate": false,
-  "spriteSheetId": "52ad34df-f245-4b2a-b94c-a82af1002871",
+  "spriteSheetId": "1e27bb8e-c805-435a-8b87-05b4f50da4f0",
   "paletteId": "",
   "direction": "right",
   "moveSpeed": 1,
@@ -23,7 +23,7 @@
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "Still a work in\nprogress, sorry!"
+          "Luna: Meow?"
         ],
         "__section": "text",
         "avatarId": "",

@@ -1,12 +1,12 @@
 {
   "_resourceType": "actor",
   "id": "dc9e5886-f39c-4480-a543-c0436b79bb67",
-  "_index": 4,
+  "_index": 3,
   "symbol": "actor_16",
   "prefabId": "",
   "name": "",
-  "x": 3,
-  "y": 5,
+  "x": 9,
+  "y": 4,
   "frame": 0,
   "animate": false,
   "spriteSheetId": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
@@ -20,17 +20,25 @@
   "prefabScriptOverrides": {},
   "script": [
     {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "566c8812-a204-45b5-b93a-c113c10c20de",
+        "direction": {
+          "type": "direction",
+          "value": "left"
+        }
+      },
+      "id": "72d34080-b51f-49f8-892b-dcdcc8f0ffd0"
+    },
+    {
       "id": "0fda232e-04c4-4f82-9874-b73f384f0028",
       "command": "EVENT_TEXT",
       "args": {
-        "text": "This room is\npretty empty."
-      }
-    },
-    {
-      "id": "2d151fc7-c78f-452d-84ab-9d11caf772c4",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": "Try to edit\nhouse.png"
+        "text": [
+          "At different work\nplaces, I've built\nup experience",
+          "with - and remain\nincredibly\ninterested in - ",
+          "Agile Processes,\nUI/UX and DX."
+        ]
       }
     }
   ],

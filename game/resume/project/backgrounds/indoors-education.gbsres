@@ -1,0 +1,12 @@
+{
+  "_resourceType": "background",
+  "id": "3b1db10a-f0c4-408c-9bc9-9c487a01d04e",
+  "name": "indoors-education",
+  "symbol": "bg_indoors_education",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "indoors-education.png",
+  "tileColors": ""
+}

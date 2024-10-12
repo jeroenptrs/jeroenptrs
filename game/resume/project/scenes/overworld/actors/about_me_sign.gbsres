@@ -24,7 +24,7 @@
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "About Me\nand hobbies"
+          "About Me\nand Hobbies"
         ]
       }
     }

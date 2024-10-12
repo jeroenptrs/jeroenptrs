@@ -1,7 +1,7 @@
 {
   "_resourceType": "actor",
-  "id": "ce3b51ad-72c4-42dd-aaa3-4cc58a2cf235",
-  "name": "Intro Sign",
+  "id": "2af303dd-a886-4ce4-9fa2-6511e9430e7e",
+  "name": "",
   "frame": 0,
   "animate": false,
   "spriteSheetId": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
@@ -14,15 +14,25 @@
   "persistent": false,
   "collisionGroup": "",
   "prefabScriptOverrides": {},
-  "symbol": "actor_0",
+  "symbol": "actor_17",
   "script": [
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "566c8812-a204-45b5-b93a-c113c10c20de",
+        "direction": {
+          "type": "direction",
+          "value": "down"
+        }
+      },
+      "id": "83822ad4-fb13-4ab1-a42c-d27d3b1a3fd7"
+    },
     {
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "Welcome to my\ninteractive résumé",
-          "Interact and ex-\nplore this map to\nfind out more!",
-          "For inquiries mail\nme: contact@jeroen\npeeters.be"
+          "Despite this site\nnot being one,",
+          "I've been a vocal\nsupporter of PWA's\nfor a while now"
         ],
         "__section": "text",
         "avatarId": "",
@@ -41,7 +51,7 @@
         "closeDelayTime": 0.5,
         "closeDelayFrames": 30
       },
-      "id": "5908266c-6ba0-405b-8d41-6fa34dcb384b"
+      "id": "f3b395cb-c15d-4a3e-95ba-943abe12d3a2"
     }
   ],
   "startScript": [],
@@ -49,7 +59,7 @@
   "hit1Script": [],
   "hit2Script": [],
   "hit3Script": [],
-  "x": 10,
-  "y": 17,
+  "x": 14,
+  "y": 12,
   "_index": 4
 }

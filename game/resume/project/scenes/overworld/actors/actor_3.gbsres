@@ -15,7 +15,33 @@
   "collisionGroup": "",
   "prefabScriptOverrides": {},
   "symbol": "actor_2",
-  "script": [],
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Work Experience,\nPast (down) and\nPresent (up)."
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "186bef44-5430-4b1c-ab00-f0cc354b004f"
+    }
+  ],
   "startScript": [],
   "updateScript": [],
   "hit1Script": [],

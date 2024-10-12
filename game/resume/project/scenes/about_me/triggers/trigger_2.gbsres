@@ -46,7 +46,31 @@
       "args": {
         "text": [
           "Gaming-especially\nPokémon games-has\nhad a lasting",
-          "impact on me. It's\nthe main reason I\nam a developer!!!",
+          "impact on me. It's\nthe main reason I\nam a developer!!!"
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "4db35e59-eaea-44c3-b798-a879e44cf8da"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
           "Looking forward to\nnew Pokémon games",
           "and adding shinies\nto my collection!"
         ],
@@ -67,7 +91,7 @@
         "closeDelayTime": 0.5,
         "closeDelayFrames": 30
       },
-      "id": "4db35e59-eaea-44c3-b798-a879e44cf8da"
+      "id": "d66e300d-29a4-46b5-ac01-fdd49b55741b"
     },
     {
       "command": "EVENT_ACTOR_SET_STATE",

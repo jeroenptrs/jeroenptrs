@@ -1,12 +1,12 @@
 {
   "_resourceType": "actor",
   "id": "4e43d51b-f316-480c-818d-1ad4016f27ef",
-  "_index": 3,
+  "_index": 2,
   "symbol": "actor_15",
   "prefabId": "",
   "name": "",
-  "x": 3,
-  "y": 11,
+  "x": 14,
+  "y": 8,
   "frame": 0,
   "animate": false,
   "spriteSheetId": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
@@ -20,10 +20,25 @@
   "prefabScriptOverrides": {},
   "script": [
     {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "566c8812-a204-45b5-b93a-c113c10c20de",
+        "direction": {
+          "type": "direction",
+          "value": "down"
+        }
+      },
+      "id": "bee06ce6-da7b-40c7-8749-b2796f287b11"
+    },
+    {
       "id": "19a1f2b5-fa36-438b-bc61-02fdeb5cb62b",
       "command": "EVENT_TEXT",
       "args": {
-        "text": "Add backgrounds to\nassets/backgrounds"
+        "text": [
+          "Outside of office\nhours, I'm still\nactive in dev!",
+          "Currently building\na personal habit\ntracker to serve",
+          "as a playground to\ntry Local First\narchitecture."
+        ]
       }
     }
   ],

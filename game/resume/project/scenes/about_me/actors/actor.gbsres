@@ -20,9 +20,57 @@
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "Again, pleased to\nmeet you! Here's\nsome info about me",
+          "Again, pleased to\nmeet you! Here's\nsome info about me"
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "84735ed8-7652-4f2c-a6d7-e23056679b01"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
           "I was born on\nApril 6th 1992",
-          "I live in Belgium\nin the Limburg\nprovince",
+          "I live in Limburg,\na Belgian Province"
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "740e74de-1144-482b-9fb5-d40e13cf17b5"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
           "My favourite color\nis teal and I have\na cat named Luna",
           "Tip: interacting\nwith the rooms\nreveals more info!"
         ],
@@ -43,7 +91,7 @@
         "closeDelayTime": 0.5,
         "closeDelayFrames": 30
       },
-      "id": "84735ed8-7652-4f2c-a6d7-e23056679b01"
+      "id": "685a067d-4e47-4258-9a7c-59c0b92c6012"
     }
   ],
   "startScript": [],
