@@ -1,27 +1,120 @@
 {
   "_resourceType": "actor",
-  "id": "025c7320-2eb1-4209-bf74-c1eef183ecc8",
-  "_index": 1,
-  "symbol": "actor_8",
-  "prefabId": "",
+  "id": "1adbe186-ff1f-46d2-9e1e-43e12c04780e",
   "name": "",
-  "x": 4,
-  "y": 4,
   "frame": 0,
-  "animate": true,
-  "spriteSheetId": "f2610e3c-8ff9-42fa-a9bb-d1591031fa17",
-  "paletteId": "",
+  "animate": false,
+  "spriteSheetId": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
+  "prefabId": "",
   "direction": "down",
   "moveSpeed": 1,
-  "animSpeed": 7,
+  "animSpeed": 15,
+  "paletteId": "",
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
   "prefabScriptOverrides": {},
-  "script": [],
+  "symbol": "actor_7",
+  "script": [
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "15d7cf30-df3a-427b-883a-996b605edb40",
+        "direction": {
+          "type": "direction",
+          "value": "down"
+        }
+      },
+      "id": "6e231c97-6234-4d65-a00f-982ae66179d7"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "wearefront was tec\nhnically not work,\nbut a project I ",
+          "started while in\nCollege, which was\nsupported by",
+          "incubator programs\nof said College\n(PXL) and KBC."
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "f623317e-c4a4-4f95-ae91-80dda32f61aa"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "It flowed out of\nbeing actively\ninvolved in the",
+          "Belgian metal\nscene, helping\nartists with",
+          "management and\ndistribution, next\nto production."
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "9afb12a3-412e-4a5a-ba97-e9eb1879e7c7"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Through the incuba\ntor programs, I\nattempted to",
+          "transfer that work\ninto tools for\nindie artists.",
+          "But after my gradu\nation in 2017, I\nshifted my focus"
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "8d29d03a-19d7-46bd-b3c2-aad89832c039"
+    }
+  ],
   "startScript": [],
   "updateScript": [],
   "hit1Script": [],
   "hit2Script": [],
-  "hit3Script": []
+  "hit3Script": [],
+  "x": 5,
+  "y": 13,
+  "_index": 1
 }

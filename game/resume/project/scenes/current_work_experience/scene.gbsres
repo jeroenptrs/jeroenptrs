@@ -1,0 +1,22 @@
+{
+  "_resourceType": "scene",
+  "id": "028fd983-2d5a-4568-8dee-604d63c056ad",
+  "_index": 4,
+  "name": "Current Work Experience",
+  "backgroundId": "dd8ac0fd-9b5a-472c-8418-ffc3ee07c991",
+  "tilesetId": "",
+  "width": 20,
+  "height": 18,
+  "type": "TOPDOWN",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "003e+0f3+00a+0f3+004+0f!00!0f!00a+0f!00!0f!004+0f!00!0f!00a+0f!00!0f!004+0f!00!0fc+00!0f!004+0f!00e+0f!002+0f3+00e+0f4+0012+0f2+0012+0f4+00e+0f3+002+0f!00e+0f!004+0f!00e+0f!004+0f!00!0fc+00!0f!004+0f!00!0f!00a+0f!00!0f!004+0f3+00a+0f3+0016+",
+  "autoFadeSpeed": 1,
+  "symbol": "scene_5",
+  "x": 288,
+  "y": 336,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

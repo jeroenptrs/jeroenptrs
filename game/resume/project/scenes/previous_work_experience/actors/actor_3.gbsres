@@ -1,59 +1,120 @@
 {
   "_resourceType": "actor",
-  "id": "15d7cf30-df3a-427b-883a-996b605edb40",
-  "_index": 2,
-  "symbol": "actor_9",
-  "prefabId": "",
+  "id": "d087989e-4b39-4342-a256-bdfc5834286c",
   "name": "",
-  "x": 9,
-  "y": 5,
   "frame": 0,
   "animate": false,
-  "spriteSheetId": "40dcd163-9f72-4861-8131-b01eb9baa000",
-  "paletteId": "",
+  "spriteSheetId": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
+  "prefabId": "",
   "direction": "down",
   "moveSpeed": 1,
   "animSpeed": 15,
+  "paletteId": "",
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
   "prefabScriptOverrides": {},
+  "symbol": "actor_8",
   "script": [
     {
-      "id": "353bee92-fd23-468b-bf09-99a098d1629d",
-      "command": "EVENT_TEXT",
+      "command": "EVENT_ACTOR_SET_DIRECTION",
       "args": {
-        "text": "It's dangerous to\ngo without docs."
-      }
-    },
-    {
-      "id": "3f4b8292-f024-47fb-955d-f7f99a08415e",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": "Check out\ngbstudio.dev/docs"
-      }
-    },
-    {
-      "id": "89023ce1-b504-48b3-b0af-9cec0b868bb0",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": "Also, try moving\nthe rock outside."
-      }
-    },
-    {
-      "id": "ac4ebd76-c81c-4f85-91f9-29cef760538c",
-      "command": "EVENT_SET_VALUE",
-      "args": {
-        "variable": "7",
-        "value": {
-          "type": "true"
+        "actorId": "15d7cf30-df3a-427b-883a-996b605edb40",
+        "direction": {
+          "type": "direction",
+          "value": "down"
         }
-      }
+      },
+      "id": "df275ac0-21a1-4b43-8519-5129d1f27ec3"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "I worked at De Cro\nnos Groep as a Fro\nntend Consultant",
+          "from August 2017\ntill March 2019."
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "b54f6d37-6b69-43a9-b76c-0528d158062c"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Focusing mainly on\nReact and React\nNative, I started",
+          "working on various\nprojects for Feder\nal instances,",
+          "like NMBS (Rail)\nVRT (TV/Streaming)\nand BPost,",
+          "as well as\ncorporations like\nColruyt Group."
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "2d881102-7406-4656-a7f6-c67db22618ae"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Despite the large\nsize of these\norganizations,",
+          "the teams I was in\nwere very nimble\nand operated ",
+          "more as internal\nstartups."
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "9c229272-8a09-405b-a418-3b9447ca85d4"
     }
   ],
   "startScript": [],
   "updateScript": [],
   "hit1Script": [],
   "hit2Script": [],
-  "hit3Script": []
+  "hit3Script": [],
+  "x": 13,
+  "y": 13,
+  "_index": 2
 }

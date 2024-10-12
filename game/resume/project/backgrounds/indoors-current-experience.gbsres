@@ -1,0 +1,12 @@
+{
+  "_resourceType": "background",
+  "id": "dd8ac0fd-9b5a-472c-8418-ffc3ee07c991",
+  "name": "indoors-current-experience",
+  "symbol": "bg_indoors_current_experien",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "indoors-current-experience.png",
+  "tileColors": ""
+}

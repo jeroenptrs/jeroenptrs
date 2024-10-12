@@ -1,15 +1,15 @@
 {
   "_resourceType": "actor",
-  "id": "5aa3ca8b-31c6-444a-9c94-9f25cdf41938",
+  "id": "15d7cf30-df3a-427b-883a-996b605edb40",
   "_index": 0,
-  "symbol": "actor_7",
+  "symbol": "actor_9",
   "prefabId": "",
   "name": "",
-  "x": 4,
-  "y": 6,
+  "x": 9,
+  "y": 5,
   "frame": 0,
   "animate": false,
-  "spriteSheetId": "e9e61bf7-88fd-491d-ae01-4b7f76909108",
+  "spriteSheetId": "40dcd163-9f72-4861-8131-b01eb9baa000",
   "paletteId": "",
   "direction": "down",
   "moveSpeed": 1,
@@ -18,7 +18,18 @@
   "persistent": false,
   "collisionGroup": "",
   "prefabScriptOverrides": {},
-  "script": [],
+  "script": [
+    {
+      "id": "353bee92-fd23-468b-bf09-99a098d1629d",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The items on the\ndesks represent my",
+          "past work experien\nces, try interacti\nng with them!"
+        ]
+      }
+    }
+  ],
   "startScript": [],
   "updateScript": [],
   "hit1Script": [],

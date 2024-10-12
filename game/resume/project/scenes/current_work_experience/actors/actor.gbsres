@@ -1,12 +1,12 @@
 {
   "_resourceType": "actor",
-  "id": "565d0d18-c5d2-4697-96b4-cf2276ef1994",
+  "id": "13ab266d-41aa-4965-9781-d6c332d377cc",
   "name": "",
   "frame": 0,
   "animate": false,
-  "spriteSheetId": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
+  "spriteSheetId": "40dcd163-9f72-4861-8131-b01eb9baa000",
   "prefabId": "",
-  "direction": "down",
+  "direction": "left",
   "moveSpeed": 1,
   "animSpeed": 15,
   "paletteId": "",
@@ -14,25 +14,14 @@
   "persistent": false,
   "collisionGroup": "",
   "prefabScriptOverrides": {},
-  "symbol": "actor_10",
+  "symbol": "actor_18",
   "script": [
     {
-      "command": "EVENT_ACTOR_SET_DIRECTION",
-      "args": {
-        "actorId": "15d7cf30-df3a-427b-883a-996b605edb40",
-        "direction": {
-          "type": "direction",
-          "value": "down"
-        }
-      },
-      "id": "3a7b2f02-cef3-458d-9299-f5b4d920ade9"
-    },
-    {
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "After Cronos, my\nnext challenge was\nat UnifiedPost",
-          "as a Frontend Deve\nloper, focusing on\nReact+Typescript"
+          "I started at Twipe\nin May of 2021,",
+          "joining their\nReact Native team."
         ],
         "__section": "text",
         "avatarId": "",
@@ -51,14 +40,15 @@
         "closeDelayTime": 0.5,
         "closeDelayFrames": 30
       },
-      "id": "1f407b3b-a24b-4e0d-8c13-91ff09a27cdf"
+      "id": "f8f4ba9a-976b-4738-9ece-d512c73e94ed"
     },
     {
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "My team worked on\na collaborative\ntool to make",
-          "documents suited\nfor print and\ninvoicing."
+          "My goal was to\nhelp modernize\ntheir approach to",
+          "both their web and\nmobile products.",
+          "Potentially even\nconsolidating\nthem."
         ],
         "__section": "text",
         "avatarId": "",
@@ -77,14 +67,14 @@
         "closeDelayTime": 0.5,
         "closeDelayFrames": 30
       },
-      "id": "8e2f65d9-a7fd-411b-81ee-7b841f69fbfb"
+      "id": "49edaf62-dcc8-4ea7-a408-2dda3949cf84"
     },
     {
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "My tasks mainly\nrevolved around\ncreating various",
-          "backoffice tools,\nto enrich the prod\nuct's experience "
+          "Being a passionate\nadvocate both for\nReact and TS,",
+          "this is where I\nalso grew to love\nReact Native."
         ],
         "__section": "text",
         "avatarId": "",
@@ -103,13 +93,14 @@
         "closeDelayTime": 0.5,
         "closeDelayFrames": 30
       },
-      "id": "dfd61cf8-f9d3-4d2b-8717-361b93383545"
+      "id": "21263e91-d499-414d-90f7-f879b85614e3"
     },
     {
       "command": "EVENT_TEXT",
       "args": {
         "text": [
-          "I worked at UP \nfrom March 2019\ntill April 2021."
+          "At Twipe, I've had\nthe pleasure of\nspearheading many",
+          "key features, but\nthe ones I'm most\nproud of are:"
         ],
         "__section": "text",
         "avatarId": "",
@@ -128,7 +119,61 @@
         "closeDelayTime": 0.5,
         "closeDelayFrames": 30
       },
-      "id": "2f00661a-b31b-4c2a-abe1-932765e13b30"
+      "id": "8668299d-9450-4d8b-be5b-3f3c450a480a"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "A suite of native\naudio playback\nfeatures, both",
+          "Text To Speech and\nexternal audio\nplayback."
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "0cdd0c19-80f1-4caf-aa3f-44612e5ba08e"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "And introducing\nDark Mode support\nin their apps,",
+          "which previously\nonly supported\nLight Mode.",
+          "This allowed me to\nalso introduce a\nshareable Design ",
+          "System and tokens\nusable across apps\nand designs."
+        ],
+        "__section": "text",
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 5,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -1,
+        "speedOut": -1,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "359928d8-4bc2-4c17-a832-df79ef182d6b"
     }
   ],
   "startScript": [],
@@ -136,7 +181,7 @@
   "hit1Script": [],
   "hit2Script": [],
   "hit3Script": [],
-  "x": 13,
-  "y": 8,
-  "_index": 3
+  "x": 15,
+  "y": 13,
+  "_index": 0
 }

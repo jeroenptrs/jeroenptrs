@@ -25,6 +25,17 @@
         "Tiles_FinalLayout.tsx": {
             "scaleInEditor": 1
         },
+        "house.tsx": {
+            "scaleInEditor": 1
+        },
+        "indoors-current-experience.tmx": {
+            "scale": 7.261562499999999,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 81.04316391961096,
+                "y": 72.9870465206352
+            }
+        },
         "indoors-education.tmx": {
             "scale": 7.26,
             "selectedLayer": 2,
@@ -37,8 +48,8 @@
             "scale": 5.925624999999999,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 95.68610906022573,
-                "y": 78.72587279822804
+                "x": 96.95179833350915,
+                "y": 79.99156207151145
             }
         },
         "overworld.tmx": {
@@ -60,8 +71,9 @@
     ],
     "project": "overworld.tiled-project",
     "recentFiles": [
-        "indoors-education.tmx",
+        "house.tsx",
         "GB Studio Indoors BitsAndBobs.tsx",
+        "indoors-education.tmx",
         "Overworld_Final.tsx",
         "Tiles_FinalLayout.tsx",
         "Sml_Appartment_Final.tsx",
