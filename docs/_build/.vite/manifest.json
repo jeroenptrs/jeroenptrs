@@ -1,9 +1,16 @@
 {
-  "_client-UgwpI4jI.js": {
-    "file": "assets/client-UgwpI4jI.js",
+  "/Users/jeroenpeeters/Projects/Personal/resume/app/styles.css": {
+    "file": "assets/styles-BcWjk5QF.css",
+    "src": "/Users/jeroenpeeters/Projects/Personal/resume/app/styles.css"
+  },
+  "_client-W5SDiwVP.js": {
+    "file": "assets/client-W5SDiwVP.js",
     "name": "client",
     "dynamicImports": [
       "app/routes/index.tsx?tsr-split"
+    ],
+    "assets": [
+      "assets/styles-BcWjk5QF.css"
     ]
   },
   "app/assets/avatar.png": {
@@ -11,27 +18,24 @@
     "src": "app/assets/avatar.png"
   },
   "app/routes/index.tsx?tsr-split": {
-    "file": "assets/index-TkUjL26B.js",
+    "file": "assets/index-DfHKkUWQ.js",
     "name": "index",
     "src": "app/routes/index.tsx?tsr-split",
     "isDynamicEntry": true,
     "imports": [
-      "_client-UgwpI4jI.js"
-    ],
-    "css": [
-      "assets/index-BcWjk5QF.css"
+      "_client-W5SDiwVP.js"
     ],
     "assets": [
       "assets/avatar-BG8E7SB5.png"
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-2eMstCht.js",
+    "file": "assets/client-n4TQlPbc.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
     "imports": [
-      "_client-UgwpI4jI.js"
+      "_client-W5SDiwVP.js"
     ]
   }
 }

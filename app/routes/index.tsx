@@ -1,14 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import avatar from "../assets/avatar.png";
-import * as styles from "../styles.css";
 
 export const Route = createFileRoute("/")({
 	component: Home,
 });
 
 function Home() {
-	styles;
 	return (
 		<div className="container prose prose-invert min-h-[100vh] flex justify-center items-center">
 			<div className="bg-slate-900 text-white/100 rounded p-6 h-fit flex-1 outline outline-1 outline-slate-850">
