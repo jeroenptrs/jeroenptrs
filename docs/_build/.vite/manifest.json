@@ -3,8 +3,8 @@
     "file": "assets/styles-B0ORg5Zl.css",
     "src": "/Users/jeroenpeeters/Projects/Personal/resume/app/styles.css"
   },
-  "_client-HZeFly-6.js": {
-    "file": "assets/client-HZeFly-6.js",
+  "_client-hf9bAsCm.js": {
+    "file": "assets/client-hf9bAsCm.js",
     "name": "client",
     "dynamicImports": [
       "app/routes/index.tsx?tsr-split"
@@ -18,24 +18,24 @@
     "src": "app/assets/avatar.png"
   },
   "app/routes/index.tsx?tsr-split": {
-    "file": "assets/index-D6TL-w15.js",
+    "file": "assets/index-BOdLt34q.js",
     "name": "index",
     "src": "app/routes/index.tsx?tsr-split",
     "isDynamicEntry": true,
     "imports": [
-      "_client-HZeFly-6.js"
+      "_client-hf9bAsCm.js"
     ],
     "assets": [
       "assets/avatar-BG8E7SB5.png"
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-BTJYsKSw.js",
+    "file": "assets/client-3CNXOz0s.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
     "imports": [
-      "_client-HZeFly-6.js"
+      "_client-hf9bAsCm.js"
     ]
   }
 }

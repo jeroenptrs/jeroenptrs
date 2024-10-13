@@ -30,7 +30,16 @@ function Home() {
 						<p>
 							Clicking through to <a href="/resume">/resume</a>, you will find
 							an interactive version of my résumé. A PDF version can be found at{" "}
-							<a href="/resume">{"{{coming soon}}"}</a>.
+							<a
+								href="/resume.pdf"
+								target="_blank"
+								type="application/pdf"
+								rel="noreferrer alternate"
+								media="print"
+							>
+								/resume.pdf
+							</a>
+							.
 						</p>
 						<hgroup>
 							<h3 className="text-white/60 text-lg font-serif mt-8">
