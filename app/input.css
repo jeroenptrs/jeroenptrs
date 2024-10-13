@@ -16,6 +16,10 @@ a {
     @apply font-serif underline underline-offset-2 text-teal-250;
 }
 
+.avatar {
+    max-width: 300px;
+}
+
 @media screen(sm) {
     section {
         @apply flex flex-row justify-between gap-4;
