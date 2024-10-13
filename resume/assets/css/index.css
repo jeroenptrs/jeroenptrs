@@ -1,1 +1,11 @@
-body {-moz-user-select:none;-webkit-user-select:none;user-select:none;}
+body {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	background-color: #c4c1bc;
+}
+@media (min-width: 424px) {
+	body {
+		background-color: rgb(24, 28, 37);
+	}
+}
