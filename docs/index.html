@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><meta name="tsr-meta"/><title>jeroenpeeters.be</title><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_build/assets/index-BcWjk5QF.css" as="style" /><link rel="modulepreload" href="/_build/assets/client-2eMstCht.js"/><link rel="modulepreload" href="/_build/assets/client-UgwpI4jI.js"/><script class="tsr-once ">
+__TSR__ = {
+  matches: [],
+  streamedValues: {},
+  initMatch: (index) => {
+    Object.entries(__TSR__.matches[index].extracted).forEach(([id, ex]) => {
+      if (ex.type === 'stream') {
+        let controller;
+        ex.value = new ReadableStream({
+          start(c) { controller = c; }
+        })
+        ex.value.controller = controller
+      } else if (ex.type === 'promise') {
+        let r, j
+        ex.value = new Promise((r_, j_) => { r = r_, j = j_ })
+        ex.resolve = r; ex.reject = j
+      }
+    })
+  },
+  cleanScripts: () => {
+    document.querySelectorAll('.tsr-once').forEach((el) => {
+      el.remove()
+    })
+  },
+}</script><script class="tsr-once ">__TSR__.dehydrated = "{\"router\":{\"state\":{\"dehydratedMatches\":[{\"id\":\"__root__\",\"status\":\"success\",\"updatedAt\":1728823794730,\"error\":{\"$undefined\":\"\"}},{\"id\":\"/\",\"status\":\"success\",\"updatedAt\":1728823794730,\"error\":{\"$undefined\":\"\"}}]},\"manifest\":{\"routes\":{\"__root__\":{\"preloads\":[\"/_build/assets/client-2eMstCht.js\",\"/_build/assets/client-UgwpI4jI.js\"],\"assets\":[{\"tag\":\"script\",\"attrs\":{\"src\":\"/_build/assets/client-2eMstCht.js\",\"type\":\"module\",\"async\":true,\"suppressHydrationWarning\":true}}]},\"/\":{\"preloads\":{\"$undefined\":\"\"},\"assets\":{\"$undefined\":\"\"}}}}},\"payload\":{\"$undefined\":\"\"}}"</script><meta name="/tsr-meta"/></head><link rel="stylesheet" href="/_build/assets/index-BcWjk5QF.css" /><body><div id="root"><!--$--><div class="container prose prose-invert min-h-[100vh] flex justify-center items-center"><div class="bg-slate-900 text-white/100 rounded p-6 h-fit flex-1 outline outline-1 outline-slate-850"><section><div class="max-w-[700px]"><hgroup class="mb-4 order-1"><h2 class="font-serif text-2xl">Jeroen Peeters</h2><h5 class="text-white/60">Frontend Developer</h5></hgroup><p class="text-lg font-serif">Hello there 👋</p><p>My name is Jeroen Peeters, I&#x27;m a Frontend Developer at<!-- --> <a href="https://twipemobile.com">Twipe</a>. My focus is on product development using React, React Native and Typescript.</p><hgroup><h3 class="text-white/85 text-lg font-serif mt-4">Experience</h3></hgroup><p>At <a href="/resume">/resume</a> you can find an interactive version of my résumé.</p><p>A PDF version can be found at<!-- --> <a href="/resume">{{coming soon}}</a>.</p><hgroup><h3 class="text-white/85 text-lg font-serif mt-4">Get in touch</h3></hgroup><p>Via email:<!-- --> <a href="mailto:contact@jeroenpeeters.be">contact@jeroenpeeters.be</a></p><p class="flex flex-row gap-2"><a href="https://twitter.com/jeroenbpeeters">Twitter</a> <span>|</span><a href="linkedin.com/in/jeroenptrs">LinkedIn</a></p></div><div class="avatar"><img class="rounded" src="/_build/assets/avatar-BG8E7SB5.png" alt="Photograph taken of me during a conference talk"/></div></section></div></div><script class="tsr-once ">__TSR__.matches[1] = {"__beforeLoadContext":"{}","loaderData":"{\"$undefined\":\"\"}","extracted":{}}; __TSR__.initMatch(1)</script><!--/$--><script src="/_build/assets/client-2eMstCht.js" type="module" async=""></script></div></body></html><script class="tsr-once ">__TSR__.matches[0] = {"__beforeLoadContext":"{}","loaderData":"{\"$undefined\":\"\"}","extracted":{}}; __TSR__.initMatch(0)</script>
