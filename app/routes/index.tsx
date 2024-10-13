@@ -49,7 +49,7 @@ function Home() {
 						<p className="flex flex-row gap-2">
 							<a href="https://twitter.com/jeroenbpeeters">Twitter</a>{" "}
 							<span>|</span>
-							<a href="linkedin.com/in/jeroenptrs">LinkedIn</a>
+							<a href="https://linkedin.com/in/jeroenptrs">LinkedIn</a>
 						</p>
 					</div>
 					<div className="avatar">
