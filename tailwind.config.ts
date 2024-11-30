@@ -4,7 +4,9 @@ import container, { picoUiContainers } from "@pico-ui/container-plugin";
 import type { Config } from "tailwindcss";
 
 export default {
-	content: ["./app/**/*.{html,js,ts,tsx}"],
+	darkMode: "class",
+	content: ["./{app,components}/**/*.{js,jsx,ts,tsx}"],
+	presets: [require("nativewind/preset")],
 	theme: {
 		colors,
 		extend: {
