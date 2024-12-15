@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.overflow-y-scroll {
+	overflow-y: scroll;
+	scrollbar-color: var(--border-color) var(--card-color);
+}

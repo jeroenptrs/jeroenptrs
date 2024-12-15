@@ -1,35 +1,33 @@
 import { Text as _Text, type TextProps, View } from "react-native";
+import cn from "clsx";
 import { Image } from "expo-image";
 import { Link } from "expo-router";
-import cn from "clsx";
 import { vars } from "nativewind";
-import { useTheme } from "@react-navigation/native";
 
-const linkCn = "font-serif underline underline-offset-2 text-teal-250";
+import { useThemeVars } from "@/constants/useThemeVars";
+
+// TODO: use twmerge
+const linkCn = "font-serif underline underline-offset-2 text-[--primary-color]";
 const Text = ({ className, ...props }: TextProps) => (
 	<_Text
 		{...props}
-		className={cn(
-			"text-[--text-color] text-base mt-2 font-sans font-light",
-			className,
-		)}
+		className={cn("text-[--text-color] text-base mt-2 font-sans", className)}
 	/>
 );
 
 const avatar = require("@/assets/images/avatar.png");
 
 export default function Index() {
-	const { colors } = useTheme();
+	const themeVars = useThemeVars();
 	return (
 		<View
 			className="container flex justify-center items-center w-full h-full"
 			style={vars({
 				"--avatar-width": `${avatar.width}px`,
-				"--card-color": colors.card,
-				"--text-color": colors.text,
+				...themeVars,
 			})}
 		>
-			<View className="outline-gray-150 dark:outline-slate-850 bg-[--card-color] dark:bg-[--card-color] rounded p-6 outline outline-1">
+			<View className="outline-[--border-color] bg-[--card-color] dark:bg-[--card-color] rounded p-6 outline outline-1">
 				<View className="max-w-[600px] flex-1">
 					<View className="mb-4 flex-col gap-4 items-center">
 						<Image
@@ -41,7 +39,7 @@ export default function Index() {
 							<_Text className="text-[--text-color] font-serif text-[1.5rem] leading-8 flex-1 text-center">
 								Jeroen Peeters
 							</_Text>
-							<_Text className="text-[--text-color] text-base opacity-70 dark:opacity-60">
+							<_Text className="text-[--text-color] text-base opacity-65">
 								Frontend Developer
 							</_Text>
 							<View className="flex flex-row gap-2">
@@ -72,7 +70,7 @@ export default function Index() {
 							</View>
 						</View>
 					</View>
-					<_Text className="text-lg font-serif mt-4 font-normal text-[--text-color]">
+					<_Text className="text-lg font-serif mt-4 text-[--text-color]">
 						Hello there 👋
 					</_Text>
 					<Text>
@@ -88,7 +86,7 @@ export default function Index() {
 						Typescript.
 					</Text>
 					<View className="mt-4">
-						<_Text className="text-lg text-[--text-color] font-serif font-normal mt-2 opacity-70 dark:opacity-60">
+						<_Text className="text-lg text-[--text-color] font-serif mt-2 opacity-65">
 							Experience
 						</_Text>
 					</View>
