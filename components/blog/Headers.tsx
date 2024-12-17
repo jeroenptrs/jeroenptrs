@@ -11,7 +11,7 @@ export function H1({ isTitle, ...props }: TextProps & { isTitle?: true }) {
 			{...props}
 			className={twMerge(
 				"font-serif text-3xl",
-				isTitle ? ["mb-4 text-[--primary-color]"] : [],
+				isTitle ? ["text-[--primary-color] mb-1"] : [],
 				props.className,
 			)}
 		/>

@@ -26,7 +26,8 @@ export default async function getBlogPosts() {
 			{data.publication?.posts.edges.map(({ node }) => (
 				<ArticleLink
 					key={node.id}
-					href={node.url.substring("https://jeroenpeeters.be".length)}
+					href={node.url.substring("https://jeroenpeeters.be/blog/".length)}
+					description={`${node.seo?.description}`}
 					publishedAt={node.publishedAt}
 					title={node.title}
 				/>

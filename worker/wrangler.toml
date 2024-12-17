@@ -1,6 +1,6 @@
 name = "jeroenpeeters-site-worker"
 main = "./worker.ts"
 compatibility_flags = [ "nodejs_compat_v2" ]
-compatibility_date = "2024-09-23"
+compatibility_date = "2024-11-11"
 
 assets = { directory = "../dist/client", binding = "CLIENT", not_found_handling = "single-page-application" }

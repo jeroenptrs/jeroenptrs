@@ -5432,6 +5432,8 @@ input SearchPostsOfPublicationFilter {
   publicationId: ObjectId!
   """The query to be searched in post."""
   query: String
+  """Tags AND filter. All tags must be present in the post."""
+  requiredTagsIds: [ID!]
   """An array of tag Ids to filter the posts."""
   tagIds: [ID!]
   """Filter based on time range."""

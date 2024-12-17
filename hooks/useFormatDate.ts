@@ -23,11 +23,11 @@ const monthMap = [
 	"December",
 ];
 
-export function useFormatDate(date: Date) {
+export function useFormatDate(date: Date, includeWeekDay = true) {
 	const year = date.getFullYear();
 	const month = date.getMonth();
 	const day = date.getDate();
 	const weekDay = date.getDay();
 
-	return `${weekDayMap[weekDay]} ${monthMap[month]} ${day}, ${year}`;
+	return `${includeWeekDay ? `${weekDayMap[weekDay]} ` : ""}${monthMap[month]} ${day}, ${year}`;
 }

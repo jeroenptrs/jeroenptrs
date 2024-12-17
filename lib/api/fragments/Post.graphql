@@ -15,4 +15,7 @@ fragment Post on Post {
 	comments(first: 0) {
 		totalDocuments
 	}
+	seo {
+		description
+	}
 }

@@ -1,7 +1,7 @@
 import { Text as _Text, type TextProps, View } from "react-native";
 import cn from "clsx";
 import { Image } from "expo-image";
-import { Link } from "expo-router";
+import { Link, type LinkProps } from "expo-router";
 import { vars } from "nativewind";
 
 import { useThemeVars } from "@/constants/useThemeVars";
@@ -44,12 +44,13 @@ export default function Index() {
 							</_Text>
 							<View className="flex flex-row gap-2">
 								<Text>
+									<Link href="/blog">Blog</Link> |{" "}
 									<Link
 										href="mailto:contact@jeroenpeeters.be"
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										📨
+										Mail
 									</Link>{" "}
 									|{" "}
 									<Link
@@ -85,6 +86,14 @@ export default function Index() {
 						. My focus is on product development using React, React Native and
 						Typescript.
 					</Text>
+					<Text>
+						Occasionally, I try to practice writing about things I find
+						interesting, which you can find on{" "}
+						<Link href="/blog" className={cn(linkCn)}>
+							/blog
+						</Link>
+						.
+					</Text>
 					<View className="mt-4">
 						<_Text className="text-lg text-[--text-color] font-serif mt-2 opacity-65">
 							Experience
@@ -98,7 +107,7 @@ export default function Index() {
 						, you will find an interactive version of my résumé.{"\n"}A PDF
 						version can be found at{" "}
 						<Link
-							href="/resume.pdf"
+							href={"/resume.pdf" as LinkProps["href"]}
 							target="_blank"
 							rel="noopener noreferrer"
 							className={cn(linkCn)}
